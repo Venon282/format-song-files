@@ -1,0 +1,12 @@
+[global]
+music_path = 'E:\music\todo'
+exiftool_exe_path = 'E:\code\format_song_files\exiftool-13.59_64\exiftool.exe'
+
+[extraction]
+save_path = './infos_extracted.json'
+
+[insertion]
+load_path = './infos_to_insert.json'
+tag_reorganisation = "plex"
+separator = ";; "
+deplace_to_path = 'E:\music'
