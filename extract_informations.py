@@ -1,9 +1,7 @@
 import os
 import json
 import exiftool
-from utils import readConfig
-
-
+from format_song_files.utils import readConfig
 
     
 def extractInformations(

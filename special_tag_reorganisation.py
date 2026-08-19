@@ -11,4 +11,4 @@ def plex(entries:list, exclude_tags:list[str]=['title' ,'artist' ,'year' ,'album
                             if key not in exclude_tags
                             for item in (metadata if isinstance(metadata, list) else [metadata])]
         metadatas['real_genre'] = metadatas['genre']
-        metadatas['genre'] = metadatas_values
+        metadatas['genre'] = list(set(metadatas_values))
