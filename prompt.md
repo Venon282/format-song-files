@@ -18,11 +18,11 @@ Tag Field Specifications for Plex:
 * Album (`album`): Album name if it exists (omit key if not applicable).
 
 * Genre (`genre`): 
-  - Pure musical genres only (e.g., J-Pop, Pop;, Hard Rock, Rock, Anime, OST).
+  - Pure musical genres only (e.g., J-Pop, Pop, Hard Rock, Rock, Anime, OST, Nightcore, Electronic).
   - IMPORTANT: Include both sub-genres and broad parent genres (e.g., J-Pop giving both `["J-Pop", "Pop"]`).
 
 * Style (`style`):
-  - Media types and structural styles (e.g., Opening, Ending, TV Series, Movie, Instrumental).
+  - Media types and structural styles (e.g., Opening, Ending, TV Series, Movie, Instrumental, Vocaloid).
 
 * Mood (`mood`):
   - Emotional atmosphere and feeling (e.g., Energetic, Epic, Battle, Fast, Nostalgic, Sad, Chill).
@@ -48,6 +48,7 @@ OUTPUT REQUIREMENTS:
 - Don't skimp on the quantity; each tag must be filled out correctly and as completely as possible.
 - The tags to delete and the tags to set keys must be in lowercase
 - Do it correctly no matter the number of songs provide ! It mean do it song by song, one by one. If you reach your limits, It doesn't matter, we will continue later.
+- Never add tags as "Piano Cover", it's "Piano", "Cover" or "Nightcore Remix", it's "NightCore", "Remix" separetly
 
 ---
 
