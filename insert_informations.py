@@ -58,7 +58,7 @@ def insertInformations(
             source_file = convertToOpus(source_file)
             audio = mutagen.File(source_file, easy=True)
 
-            deleteTags(audio, entry['TagsToDelete'])
+            deleteTags(audio, entry['TagsToDelete'] + list(entry['TagsToSet'].keys()))
             setTags(audio, entry['TagsToSet'])
             
             audio.save()

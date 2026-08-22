@@ -405,5 +405,29 @@ def infosSingleFilter(infos:list[dict], key:str) -> list:
     return result
    
         
-        
+def getAllTags(dir_path:str, keys:str|list[str], exiftool_exe_path: str | None = None, verbose:bool=True):
+    if isinstance(keys, str):
+        keys = [keys]
     
+    all_tags = set()
+    with exiftool.ExifToolHelper(executable=exiftool_exe_path, encoding="utf-8") as et:
+        for entry in os.scandir(dir_path):
+            if not entry.is_file():
+                continue
+            
+            infos = extractInformation(entry.path, et)
+       
+            for key in keys:
+                if key not in infos:
+                    if verbose:
+                        logger.warning(
+                            "Key %s is not present in %s",
+                            key,
+                            os.path.basename(entry.path)
+                        )
+                    continue
+                all_tags.update(infos[key] if isinstance(infos[key], list) else [infos[key]])
+    return all_tags
+                
+        
+        

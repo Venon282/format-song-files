@@ -7,7 +7,8 @@ from format_song_files.utils import readConfig
 def extractInformations(
     music_path:str,
     exiftool_exe_path: str| None=None,
-    save_path:str='./extracted_infos.json'
+    save_path:str='./extracted_infos.json',
+    main_keys_to_excluse:list[str]=[]
 ) -> None:
     # Get metadatas
     with exiftool.ExifToolHelper(executable=exiftool_exe_path, encoding="utf-8") as et:
@@ -28,12 +29,17 @@ def extractInformations(
                 left = left.strip()
                 value = value.strip()
                 
+
                 if value.isdigit():
                     value = int(value)
                     
                 if left.startswith('[') and ']' in left:
                     group_end = left.index(']')
                     group = left[1:group_end].strip()
+                    
+                    if group in main_keys_to_excluse:
+                        continue
+                    
                     tag = left[group_end+1:].strip()
                     key = f'{group}:{tag}'
                     
@@ -53,4 +59,7 @@ def extractInformations(
     
 if __name__ == "__main__":
     config = readConfig()
-    extractInformations(**config['global'], **config['extraction'])
+    extractInformations(
+        **config['global'], 
+        **config['extraction']
+    )
