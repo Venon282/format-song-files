@@ -5,6 +5,7 @@ import logging
 import exiftool
 import subprocess
 from pathlib import Path
+import re
 
 logger = logging.getLogger(__name__)
 
@@ -52,7 +53,7 @@ def readConfig(path:str = './config.toml') -> dict:
     with open(path, 'r', encoding='utf-8') as f:
         return toml.load(f)
     
-def extractInformation(
+def extractInformationOld(
     file_path:str,
     exiftool_helper:exiftool.ExifToolHelper|None=None,
     exiftool_exe_path: str| None=None, 
@@ -72,7 +73,9 @@ def extractInformation(
             _exiftool_helper.run()
             
         # Get metadatas
-        raw_output = _exiftool_helper.execute("-a", file_path)
+        raw_output = _exiftool_helper.execute(
+                                             "-a",
+                                            file_path)
         
         entry = {"SourceFile": file_path}
         for line in raw_output.splitlines():
@@ -99,6 +102,65 @@ def extractInformation(
                         entry[key] = [entry[key], value]
                 else:
                     entry[key] = value
+        return entry
+    finally:
+        if _exiftool_helper is not None and exiftool_helper is None:
+            _exiftool_helper.close()
+            
+ 
+def extractInformation(
+    file_path:str,
+    exiftool_helper:exiftool.ExifToolHelper|None=None,
+    exiftool_exe_path: str| None=None, 
+) -> None:
+    """ 
+    exiftool_exe_path if exiftool_helper is None but not obligate
+    """
+    _exiftool_helper = None
+    try:
+        if exiftool_helper is not None:
+            _exiftool_helper = exiftool_helper  
+        else :
+            _exiftool_helper = exiftool.ExifToolHelper(
+                executable=exiftool_exe_path,
+                encoding="utf-8"
+            )
+            _exiftool_helper.run()
+            
+        # Get metadatas
+        raw_output = _exiftool_helper.execute(
+                                             "-a",
+                                             "-v1",
+                                             "-ec",
+                                            file_path)
+        
+        entry = {"SourceFile": file_path}
+        for line in raw_output.splitlines():
+            if not " = " in line:
+                continue
+            
+            key, value = line.split(" = ", 1)
+            key = key.strip().split(' ')[-1].strip()
+            value = value.strip()
+            
+            # if integer convert it
+            if value.isdigit():
+                value = int(value)
+                
+            # if float convert it
+            try:
+                float_value = float(value)
+                value = float_value
+            except ValueError:
+                pass
+                
+            if key in entry:
+                if isinstance(entry[key], list):
+                    entry[key].append(value)
+                else:
+                    entry[key] = [entry[key], value]
+            else:
+                entry[key] = value
         return entry
     finally:
         if _exiftool_helper is not None and exiftool_helper is None:
@@ -429,5 +491,84 @@ def getAllTags(dir_path:str, keys:str|list[str], exiftool_exe_path: str | None =
                 all_tags.update(infos[key] if isinstance(infos[key], list) else [infos[key]])
     return all_tags
                 
+def sanitizeComponent(name: str) -> str:
+    """Removes forbidden Windows characters and strips trailing dots/spaces."""
+    if not name:
+        return "Unknown"
+    # Remove Windows forbidden characters: < > : " / \ | ? *
+    clean = re.sub(r'[<>:"/\\|?*]', '', str(name))
+    # Windows strictly forbids folder/file names ending with spaces or dots
+    clean = clean.rstrip('. ')
+    return clean if clean else "Unknown"
+
+def sanitizeFullPath(path: str) -> str:
+    """Safely sanitizes every folder and file name in a full path string."""
+    drive, path_tail = os.path.splitdrive(path)
+    # Split path by any slashes
+    parts = re.split(r'[/\\]+', path_tail)
+    # Sanitize each segment independently
+    cleaned_parts = [sanitizeComponent(p) for p in parts if p]
+    return drive + os.sep + os.sep.join(cleaned_parts)
+
+def plexStructure(
+        path:str, 
+        recursive:bool=False, 
+        exiftool_exe_path:str|None=None,
+        separator:str=', '
+    ):
+    from collections import deque
+    
+    que = deque([path])
+    
+    with exiftool.ExifToolHelper(
+                        executable=exiftool_exe_path,
+                        encoding="utf-8"
+                    ) as et:
         
+        # For each music folder do the processing
+        while que:
+            music_path = que.popleft()
+            for entry in os.scandir(music_path):
+                if recursive and entry.is_dir():
+                    que.append(entry.path)
+                if not entry.is_file():
+                    continue
+                
+                # Nom de l'artiste / Nom de l'album / 01 - Titre.ext
+                infos = extractInformation(
+                    entry.path,
+                    exiftool_helper=et
+                )
+                
+                artist = infos.get('Artist', 'Unknow')
+                # print(infos['Vorbis:Artist'])
+                if isinstance(artist, list):
+                    artist = separator.join(artist)
+                artist = str(artist)
+                    
+                album = infos.get('Album', 'Unknow')
+                if isinstance(album, list):
+                    album = separator.join(album)
+                album = str(album)
+                    
+                new_file_path = os.path.join(path, artist, album, os.path.basename(entry.path))
+                
+                if new_file_path != entry.path:
+                    try:
+                        os.makedirs(os.path.dirname(new_file_path), exist_ok=True)
+                        os.rename(entry.path, new_file_path)
+                    except OSError:
+                        safe_new_path = sanitizeFullPath(new_file_path)
+                        
+                        # Retry the operation with the cleaned path
+                        try:
+                            os.makedirs(os.path.dirname(safe_new_path), exist_ok=True)
+                            os.rename(entry.path, safe_new_path)
+                        except Exception as e:
+                            # Catch remaining errors (e.g., file already exists, permission denied)
+                            print(f"Error renaming '{entry.path}': {e}")
+                        
+            
+            
+            
         

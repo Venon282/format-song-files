@@ -5,7 +5,7 @@ import mutagen
 import traceback
 
 import special_tag_reorganisation
-from format_song_files.utils import readConfig, convertToOpus
+from format_song_files.utils import readConfig, convertToOpus, sanitizeFullPath
     
 def renameFile(new_name: str, file_path: str):
     new_file_path = os.path.join(os.path.dirname(file_path), new_name)
@@ -63,10 +63,23 @@ def insertInformations(
             
             audio.save()
             
+            # Get extension from converted file
+            new_ext = os.path.splitext(source_file)[1]
+
+            # Update entry['NewFileName'] extension
+            base_name = os.path.splitext(entry['NewFileName'])[0]
+            entry['NewFileName'] = base_name + new_ext
+            
             source_file = renameFile(entry['NewFileName'], source_file)
             
             if deplace_to_path is not None:
-                dest_file = os.path.join(deplace_to_path, os.path.basename(source_file))
+                artist = entry['TagsToSet'].get('Artist', 'Unknow')
+                artist = separator.join(artist)
+                    
+                album = entry['TagsToSet'].get('Album', 'Unknow')
+                album = separator.join(album)
+  
+                dest_file = sanitizeFullPath(os.path.join(deplace_to_path, artist, album, os.path.basename(source_file)))
                 if os.path.exists(dest_file):
                     files_error[source_file] = ["File already exist in destination.", entry]
                     continue
@@ -79,5 +92,11 @@ def insertInformations(
         print(f'{source_file}: {error}\n{entry}\n')    
              
 if __name__ == "__main__":
-    config = readConfig()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-c", "--config", required=False, help="Path to the config file")
+    args = parser.parse_args()
+    config_path = args.config if args.config is not None else './config.toml'
+        
+    config = readConfig(config_path)
     insertInformations(**config['global'], **config['insertion'])
