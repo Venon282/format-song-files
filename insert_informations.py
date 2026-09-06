@@ -74,10 +74,10 @@ def insertInformations(
             
             if deplace_to_path is not None:
                 artist = entry['TagsToSet'].get('Artist', 'Unknow')
-                artist = separator.join(artist)
+                artist = separator.join(artist).replace('/', '-').replace('\\', '-')
                     
                 album = entry['TagsToSet'].get('Album', 'Unknow')
-                album = separator.join(album)
+                album = separator.join(album).replace('/', '-').replace('\\', '-')
   
                 dest_file = sanitizeFullPath(os.path.join(deplace_to_path, artist, album, os.path.basename(source_file)))
                 if os.path.exists(dest_file):

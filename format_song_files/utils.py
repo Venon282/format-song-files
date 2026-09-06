@@ -544,12 +544,12 @@ def plexStructure(
                 # print(infos['Vorbis:Artist'])
                 if isinstance(artist, list):
                     artist = separator.join(artist)
-                artist = str(artist)
+                artist = str(artist).replace('/', '-').replace('\\', '-')
                     
                 album = infos.get('Album', 'Unknow')
                 if isinstance(album, list):
                     album = separator.join(album)
-                album = str(album)
+                album = str(album).replace('/', '-').replace('\\', '-')
                     
                 new_file_path = os.path.join(path, artist, album, os.path.basename(entry.path))
                 
@@ -569,6 +569,25 @@ def plexStructure(
                             print(f"Error renaming '{entry.path}': {e}")
                         
             
-            
-            
+
+
+def deleteEmptyFolders(root):
+
+    deleted = set()
+    
+    for current_dir, subdirs, files in os.walk(root, topdown=False):
+
+        still_has_subdirs = False
+        for subdir in subdirs:
+            if os.path.join(current_dir, subdir) not in deleted:
+                still_has_subdirs = True
+                break
+    
+        if not any(files) and not still_has_subdirs:
+            os.rmdir(current_dir)
+            deleted.add(current_dir)
+
+    return deleted
+
+
         
