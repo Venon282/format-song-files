@@ -1,6 +1,5 @@
 import os
 import json
-import shutil
 import mutagen
 import traceback
 
@@ -73,17 +72,19 @@ def insertInformations(
             source_file = renameFile(entry['NewFileName'], source_file)
             
             if deplace_to_path is not None:
-                artist = entry['TagsToSet'].get('Artist', 'Unknow')
-                artist = separator.join(artist).replace('/', '-').replace('\\', '-')
+                artist = entry['TagsToSet'].get('artist', ['Unknow'])
+                artist = ', '.join(artist).replace('/', '-').replace('\\', '-')
                     
-                album = entry['TagsToSet'].get('Album', 'Unknow')
-                album = separator.join(album).replace('/', '-').replace('\\', '-')
+                album = entry['TagsToSet'].get('album', ['Unknow'])
+                album = ', '.join(album).replace('/', '-').replace('\\', '-')
   
                 dest_file = sanitizeFullPath(os.path.join(deplace_to_path, artist, album, os.path.basename(source_file)))
                 if os.path.exists(dest_file):
                     files_error[source_file] = ["File already exist in destination.", entry]
                     continue
-                shutil.move(source_file, dest_file)
+                
+                os.makedirs(os.path.dirname(dest_file), exist_ok=True)
+                os.rename(source_file, dest_file)
         except:
             files_error[source_file] = [traceback.format_exc(), entry]
             continue
