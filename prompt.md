@@ -18,7 +18,7 @@ For EACH input object:
 Use multiple sources when information is ambiguous or conflicting.
 
 DO NOT GUESS:
-If a value cannot be reliably verified, omit that metadata key rather than inventing a value and tell it to me at the end. 
+If a value cannot be reliably verified, omit that metadata key rather than inventing a value and tell it to me at the end. Except for mood, genre and style that required minimal one value. Add ALL the tags matching the track that are in all_possible_tags.json. If necessary tags aren't in all_possible_tags.json, do me propositions at the end.  
 Never use `Unknown`, `N/A`, empty strings, null values, or fabricated information.
 
 OUTPUT STRUCTURE:
@@ -62,6 +62,7 @@ Rules:
 - Do not include composers, lyricists, producers, labels, studios, or publishers unless they are also credited performing artists.
 - Keep each artist as a separate array value.
 - Do not merge independent artists into one string.
+- If the file being processed is not the original track (e.g. a remix, nightcore, cover, sped-up version, etc.), the ‘artist’ and ‘year’ fields must correspond to the person or entity who reworked the track — never to the artist or year of the original version. If the identity of the remixer or the year of the remix cannot be verified, these fields must be omitted (do not fall back on the original artist or year), and the uncertainty must be noted at the end of the response.
 
 ALBUM:
 `album` = the verified album or soundtrack containing the recording.
@@ -77,9 +78,10 @@ Examples: `J-Pop`, `Pop`, `Rock`, `Hard Rock`, `Electronic`.
 
 Rules:
 - Use ONLY values present in `all_possible_tags.json`.
-- Include all directly supported applicable genres.
+- Include ALL directly supported applicable genres.
 - When `all_possible_tags.json` explicitly defines a parent/child hierarchy, include both the specific genre and its allowed parent genre(s).
 - Do not assign genres merely because they are common for the artist or region.
+- Add ALL the corresponding genres that are in `all_possible_tags.json`.
 
 STYLE:
 `style` = media type, structural, performance, or format-related classification.
@@ -91,6 +93,7 @@ Rules:
   - use `Piano` + `Cover`, not `Piano Cover`
   - use `Nightcore` + `Remix`, not `Nightcore Remix`
 - Do not create combined tags that do not exist in `all_possible_tags.json`.
+- Add ALL the corresponding styles that are in `all_possible_tags.json`.
 
 MOOD:
 `mood` = emotional atmosphere or feeling.
@@ -99,6 +102,7 @@ Examples: `Energetic`, `Epic`, `Battle`, `Fast`, `Nostalgic`, `Sad`, `Chill`.
 Rules:
 - Use ONLY values present in `all_possible_tags.json`.
 - Do not infer mood solely from the genre and style.
+- Add ALL the corresponding moods that are in `all_possible_tags.json`.
 
 LANGUAGE:
 `language` = significant lyric language(s).
@@ -114,6 +118,7 @@ Rules:
 - Do not infer country solely from language.
 - Omit when uncertain.
 - Allow to have several if different artists. If too much uncertain, use International
+- Never use short country name (not US but United States)
 
 DECADE:
 `decade` = decade corresponding to `year`.
@@ -121,18 +126,21 @@ Examples:
 - `2001` -> `2000s`
 - `2019` -> `2010s`
 - `2024` -> `2020s`
-Only set `decade` when `year` is verified.
+Only set `decade` when `year` is verified or sure to be in a decade (eg: between 1984 and 1987 is the same decade).
 
 COMMENT:
 `comment` = contextual classification only.
 Allowed examples include:
 - anime / manga / movie / TV  / video game / etc franchise and studio
 - soundtrack collection
-- other useful contextual global identifiers
+- other useful contextual global 
+- Whenever a track is tied to a franchise, always populate comment with the full ownership chain, every tier that applies, not just the most specific one:
+  1. The specific game/season/installment (e.g. Fallout 76)
+  2. The parent franchise (e.g. Fallout)
+  3. The studio/publisher (e.g. Bethesda)
+  Omit a tier only if it doesn't exist or can't be verified (e.g. no distinct "parent franchise" beyond the studio). Do this for every franchise/studio association found. anime→studio, game→publisher, film→studio, etc. Not only for the example given.
 
-(e.g: Fallout 76 is obligate to be with Fallout and Bethesda) and this for EVERY franchises meet
-
-Do not put genres, moods, languages, countries, artist names, sentence or arbitrary descriptive text into `comment`.
+Do not put genres, moods, languages, countries, albums, artist names, sentence or arbitrary descriptive text into `comment`.
 
 TAGS TO DELETE:
 `TagsToDelete` must contain only unwanted, redundant, tracking-related, URL-related, upload-related, or excessively verbose metadata fields.
@@ -154,11 +162,14 @@ Omit a metadata key when:
 - it does not apply,
 - it cannot be verified,
 - or there is insufficient reliable evidence.
+- Except for mood, genre and style that required minimal one value and ALL the ones corresponding in `all_possible_tags.json`. If no one match in all_possible_tags.json, do me propositions at the end.  
 
 Never use null, empty strings, `Unknown`, `N/A`, or fabricated values.
 
 ALL_POSSIBLE_TAGS:
 For `genre`, `style`, and `mood`, use only tags present in `all_possible_tags.json`.
+Do not be lazy, take the time to read the full file and ALL the tags in `all_possible_tags.json` that match, add them to the json. 
+For each track, one by one, you will do the effort to go through every single value in the style/genre/mood arrays, in order, and mark yes/no if they are valid for this track. This will ensure you don't miss any.
 
 If relevant tags are not present in `all_possible_tags.json`:
 - do NOT place that tag in the JSON output;
@@ -179,9 +190,8 @@ Use independent tags such as:
 VALID JSON:
 The final response must be valid JSON.
 No trailing commas.
-No Markdown fences.
-No explanations outside the JSON.
-Message at the end is only to report me missing tags and uncertain informations in a NON verbose way.
+No Markdown fences but inside a ```json```.
+No explanations outside the JSON except to report me missing tags and uncertain informations in a NON verbose way.
 
 
 ---

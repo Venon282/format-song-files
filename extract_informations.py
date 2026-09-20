@@ -18,7 +18,14 @@ def extractInformations(
                 continue
             
             path = entry.path       
-            raw_output = et.execute("-a", path)
+            try:
+                raw_output = et.execute("-a", path)
+            except exiftool.exceptions.ExifToolExecuteError as e:
+                print(f"\n[ERROR] ExifTool failed for: {path}")
+                print(f"Exception: {e}")
+                print(f"args: {e.args}")
+                print(f"dict: {vars(e)}")
+                continue
             
             entry = {"SourceFile": path}
             for line in raw_output.splitlines():
@@ -58,7 +65,13 @@ def extractInformations(
     
     
 if __name__ == "__main__":
-    config = readConfig()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-c", "--config", required=False, help="Path to the config file")
+    args = parser.parse_args()
+    config_path = args.config if args.config is not None else './config.toml'
+    
+    config = readConfig(config_path)
     extractInformations(
         **config['global'], 
         **config['extraction']

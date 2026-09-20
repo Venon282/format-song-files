@@ -1,5 +1,5 @@
 [global]
-music_path = 'E:\music\processing'
+music_path = 'E:\music utils\processing'
 exiftool_exe_path = 'E:\code\format_song_files\exiftool-13.59_64\exiftool.exe'
 
 [extraction]
