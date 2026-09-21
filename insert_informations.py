@@ -47,7 +47,7 @@ def insertInformations(
     #    raise ValueError(f'Found {len(all_files)} files for {len(entries)} entries')
     
     if tag_reorganisation is not None:
-        getattr(special_tag_reorganisation, tag_reorganisation)(entries, separator) # inplace
+        getattr(special_tag_reorganisation, tag_reorganisation)(entries, exclude_tags = ('title', 'artist', 'year', 'album')) # inplace
         
     # Handle metadatas
     files_error = {}
