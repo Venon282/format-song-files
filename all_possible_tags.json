@@ -271,6 +271,7 @@
         "Dark Pop",
         "Deep House",
         "Denpa",
+        "Disco",
         "Doo-Wop",
         "Downtempo",
         "Drum and Bass",
@@ -299,7 +300,9 @@
         "Hard Rock",
         "Hardcore",
         "Harp",
+        "Heavy Metal",
         "Hip Hop",
+        "House",
         "Hymn",
         "Indie Folk",
         "Indie Pop",
@@ -349,6 +352,7 @@
         "Rock",
         "Romantic Era",
         "Russian Folk",
+        "Salsa",
         "Scandi-Pop",
         "Scots-Irish Folk",
         "Scottish Folk",
@@ -363,6 +367,7 @@
         "Synth-Pop",
         "Synthwave",
         "Tango",
+        "Trance",
         "Trap",
         "Techno"
     ]
