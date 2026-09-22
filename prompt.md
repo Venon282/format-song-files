@@ -173,8 +173,9 @@ For each track, one by one, you will do the effort to go through every single va
 
 If relevant tags are not present in `all_possible_tags.json`:
 - do NOT place that tag in the JSON output;
-- report it to me after the end of the json.
+- report it to me after the end of the JSON file, specifying the corresponding track to which it should be linked
 - Every songs have minimal a genre, stlye and mood so it's impossible to be empty or not report at the end of the json.
+- Propose only main tags, not sub tags that are niche
 
 IMPORTANT:
 Do not add combined or invented tags such as:
