@@ -52,61 +52,6 @@ def convertToOpus(file_path: str, bitrate: str = "160k") -> str:
 def readConfig(path:str = './config.toml') -> dict:
     with open(path, 'r', encoding='utf-8') as f:
         return toml.load(f)
-    
-def extractInformationOld(
-    file_path:str,
-    exiftool_helper:exiftool.ExifToolHelper|None=None,
-    exiftool_exe_path: str| None=None, 
-) -> None:
-    """ 
-    exiftool_exe_path if exiftool_helper is None but not obligate
-    """
-    _exiftool_helper = None
-    try:
-        if exiftool_helper is not None:
-            _exiftool_helper = exiftool_helper  
-        else :
-            _exiftool_helper = exiftool.ExifToolHelper(
-                executable=exiftool_exe_path,
-                encoding="utf-8"
-            )
-            _exiftool_helper.run()
-            
-        # Get metadatas
-        raw_output = _exiftool_helper.execute(
-                                             "-a",
-                                            file_path)
-        
-        entry = {"SourceFile": file_path}
-        for line in raw_output.splitlines():
-            if not " : " in line:
-                continue
-            
-            left, value = line.split(" : ", 1)
-            left = left.strip()
-            value = value.strip()
-            
-            if value.isdigit():
-                value = int(value)
-                
-            if left.startswith('[') and ']' in left:
-                group_end = left.index(']')
-                group = left[1:group_end].strip()
-                tag = left[group_end+1:].strip()
-                key = f'{group}:{tag}'
-                
-                if key in entry:
-                    if isinstance(entry[key], list):
-                        entry[key].append(value)
-                    else:
-                        entry[key] = [entry[key], value]
-                else:
-                    entry[key] = value
-        return entry
-    finally:
-        if _exiftool_helper is not None and exiftool_helper is None:
-            _exiftool_helper.close()
-            
  
 def extractInformation(
     file_path:str,
