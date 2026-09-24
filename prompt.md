@@ -97,7 +97,7 @@ Rules:
 
 MOOD:
 `mood` = emotional atmosphere or feeling.
-Examples: `Energetic`, `Epic`, `Battle`, `Fast`, `Nostalgic`, `Sad`, `Chill`.
+Examples: `Energetic`, `Epic`, `Battle`, `Nostalgic`, `Sad`, `Chill`.
 
 Rules:
 - Use ONLY values present in `all_possible_tags.json`.

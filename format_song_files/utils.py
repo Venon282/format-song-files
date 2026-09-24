@@ -6,8 +6,34 @@ import exiftool
 import subprocess
 from pathlib import Path
 import re
+import mutagen
 
 logger = logging.getLogger(__name__)
+
+
+def renameFile(new_name: str, file_path: str):
+    new_file_path = os.path.join(os.path.dirname(file_path), new_name)
+    os.rename(file_path, new_file_path)
+    return new_file_path
+    
+def deleteTags(audio:mutagen.File, tags_to_delete: list[str]):
+    if not tags_to_delete:
+        return
+    
+    for tag in tags_to_delete:
+        audio.pop(tag, None)
+    
+def setTags(audio:mutagen.File, tags_to_set: dict[str, str]):
+    if not tags_to_set:
+        return
+
+    for tag, value in tags_to_set.items():
+        try:
+            audio[tag] = value
+        except Exception as e:
+            print(tags_to_set)
+            print(f'{tag}: {value}')
+            raise
 
 def convertToOpus(file_path: str, bitrate: str = "160k") -> str:
     """
@@ -533,6 +559,133 @@ def deleteEmptyFolders(root):
             deleted.add(current_dir)
 
     return deleted
+def replaceTagByAnotherOne(
+    path: str,
+    tags: dict[str, dict[str, list[tuple[str, str]]]],
+    exiftool_exe_path: str | None = None,
+):
+    """
+    Example:
+    tags = {
+        "Mood": {
+            "Happy": [
+                ("Genre", "Pop"),
+                ("Style", "Dance"),
+            ],
+        },
+    }
 
+    For every file:
+    - if "Happy" is present in "Mood"
+    - remove "Happy" from "Mood"
+    - add "Pop" to "Genre"
+    - add "Dance" to "Style"
+    """
+
+    with exiftool.ExifToolHelper(
+        executable=exiftool_exe_path,
+        encoding="utf-8",
+    ) as et:
+
+        for root, _, files in os.walk(path):
+
+            for file in files:
+                file_path = os.path.join(root, file)
+
+                try:
+                    infos = extractInformation(file_path, et)
+
+                    keys_to_set = set()
+
+                    for source_key, replacements in tags.items():
+
+                        if source_key not in infos:
+                            logger.warning(
+                                "%s not in infos of %s",
+                                source_key,
+                                file,
+                            )
+                            continue
+
+                        source_values = infos[source_key]
+
+                        if not isinstance(source_values, list):
+                            source_values = [source_values]
+
+                        for old_tag, new_tags in replacements.items():
+
+                            if old_tag not in source_values:
+                                continue
+
+                            # Remove the old tag
+                            source_values = [
+                                value
+                                for value in source_values
+                                if value != old_tag
+                            ]
+
+                            keys_to_set.add(source_key)
+
+                            # Add replacement tags
+                            for new_key, new_tag in new_tags:
+
+                                if new_key == source_key:
+                                    if new_tag not in source_values:
+                                        source_values.append(new_tag)
+
+                                else:
+                                    destination_values = infos.get(new_key, [])
+
+                                    if not isinstance(destination_values, list):
+                                        destination_values = [destination_values]
+
+                                    if new_tag not in destination_values:
+                                        destination_values.append(new_tag)
+
+                                    infos[new_key] = destination_values
+
+                                keys_to_set.add(new_key)
+
+                        infos[source_key] = source_values
+
+                    if not keys_to_set:
+                        continue
+
+                    audio = mutagen.File(file_path, easy=True)
+
+                    if audio is None:
+                        logger.warning(
+                            "Unable to read audio file: %s",
+                            file_path,
+                        )
+                        continue
+
+                    setTags(
+                        audio,
+                        {
+                            key.lower(): infos[key]
+                            for key in keys_to_set
+                        },
+                    )
+
+                    audio.save()
+
+                except Exception:
+                    logger.exception(
+                        "Error processing %s",
+                        file_path,
+                    )
+
+# TODO too Replace tag by
+# def deleteTagsFromAllTracks(path:str, tags:dict[str, list[str] | str], exiftool_exe_path: str | None = None):
+#     with exiftool.ExifToolHelper(
+#         executable=exiftool_exe_path,
+#         encoding="utf-8"
+#     ) as et:
+#         for root, dirs, files in os.walk(path):
+#             for file in files:
+#                 infos = extractInformation(file, et)
+#                 print(infos)
+#                 raise
 
         
