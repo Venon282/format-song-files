@@ -4,31 +4,8 @@ import mutagen
 import traceback
 
 import special_tag_reorganisation
-from format_song_files.utils import readConfig, convertToOpus, sanitizeFullPath
+from format_song_files.utils import readConfig, convertToOpus, sanitizeFullPath, setTags, deleteTags, renameFile
     
-def renameFile(new_name: str, file_path: str):
-    new_file_path = os.path.join(os.path.dirname(file_path), new_name)
-    os.rename(file_path, new_file_path)
-    return new_file_path
-    
-def deleteTags(audio:mutagen.File, tags_to_delete: list[str]):
-    if not tags_to_delete:
-        return
-    
-    for tag in tags_to_delete:
-        audio.pop(tag, None)
-    
-def setTags(audio:mutagen.File, tags_to_set: dict[str, str]):
-    if not tags_to_set:
-        return
-
-    for tag, value in tags_to_set.items():
-        try:
-            audio[tag] = value
-        except Exception as e:
-            print(tags_to_set)
-            print(f'{tag}: {value}')
-            raise
     
 def insertInformations(
     music_path:str,

@@ -8,6 +8,6 @@ main_keys_to_excluse = ['ExifTool', 'Opus', 'FLAC']
 
 [insertion]
 load_path = './infos_to_insert.json'
-tag_reorganisation = "plex"
+tag_reorganisation = "plexAll"
 separator = ";; "
 deplace_to_path = 'E:\music'

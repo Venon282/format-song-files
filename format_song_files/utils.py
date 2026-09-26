@@ -7,6 +7,7 @@ import subprocess
 from pathlib import Path
 import re
 import mutagen
+import special_tag_reorganisation
 
 logger = logging.getLogger(__name__)
 
@@ -563,6 +564,7 @@ def replaceTagByAnotherOne(
     path: str,
     tags: dict[str, dict[str, list[tuple[str, str]]]],
     exiftool_exe_path: str | None = None,
+    tag_reorganisation: str | None = None,
 ):
     """
     Example:
@@ -594,7 +596,7 @@ def replaceTagByAnotherOne(
 
                 try:
                     infos = extractInformation(file_path, et)
-
+                    
                     keys_to_set = set()
 
                     for source_key, replacements in tags.items():
@@ -659,14 +661,16 @@ def replaceTagByAnotherOne(
                             file_path,
                         )
                         continue
-
-                    setTags(
-                        audio,
-                        {
-                            key.lower(): infos[key]
-                            for key in keys_to_set
-                        },
-                    )
+                    
+                    tags_to_set = {
+                                      key.lower(): infos[key]
+                                      for key in keys_to_set
+                                  }
+                    
+                    if tag_reorganisation is not None:
+                        getattr(special_tag_reorganisation, tag_reorganisation)(tags_to_set, exclude_tags = ('title', 'artist', 'year', 'album')) # inplace
+                    
+                    setTags(audio, tags_to_set)
 
                     audio.save()
 
