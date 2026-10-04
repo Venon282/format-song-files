@@ -38,6 +38,8 @@ All values inside `TagsToSet` must be arrays of strings, even when there is only
 Do not output Markdown, explanations, comments, or code fences.
 Output ONLY raw valid JSON containing a single array of objects with at the end eventually, file proposal tags and uncertainty.
 
+Choose names that everyone can read (e.g さユり -> Sayuri)
+
 FILENAME:
 Use this format:
 
