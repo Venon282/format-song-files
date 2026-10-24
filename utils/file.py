@@ -1,15 +1,31 @@
 import os
+import itertools
 import subprocess
+from collections.abc import Generator, Iterable
 
 # internal
 from utils.logging_utils import getLogger
 
 logger = getLogger(__name__)
 
-def iterFiles(path:str):
+def iterFiles(path:str) -> Generator[str]:
     for root, _, files in os.walk(path):
         for file in files:
             yield os.path.join(root, file)
+            
+def batchFiles(path:str, batch_size: int) -> Generator[list[str], None, None]:
+    if batch_size < 1:
+        raise ValueError(f'batch_size must be at least 1, got {batch_size}.')
+
+    it = iterFiles(path)
+
+    while True:
+        batch = list(itertools.islice(it, batch_size))
+
+        if not batch:
+            break
+
+        yield batch
             
 
 def fileToOpus(file_path: str, bitrate: str = "160k") -> str:
@@ -48,3 +64,4 @@ def fileToOpus(file_path: str, bitrate: str = "160k") -> str:
         if output_path.exists():
             os.remove(output_path)
         raise
+    
