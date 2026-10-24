@@ -70,6 +70,24 @@ ALBUM:
 `album` = the verified album or soundtrack containing the recording.
 - Omit `album` if there is no applicable album or if it cannot be reliably verified.
 
+ALBUM ARTIST:
+
+`album_artist` = the principal artist credited for the album as a whole, independently of the performing artist(s) credited on an individual track.
+
+Rules:
+
+- Use the verified album-level artist credit from reliable sources.
+- Do not automatically copy `artist` into `album_artist`.
+- For a regular artist album, use the album's credited principal artist.
+- For a compilation featuring multiple artists, use `Various Artists` only when supported by the album's official credits or reliable discographic sources.
+- For collaborative albums, preserve the verified album-level collaboration credit. Do not assume that the album artist is identical to the track artist.
+- For soundtrack albums, use the officially credited album artist or soundtrack credit when one exists. Do not automatically use the film, series, game, composer, or label as the album artist.
+- For remix albums, use the artist or artists credited for the remix album as a whole, not automatically the original performers of its tracks.
+- For covers and tribute albums, use the credited performing artist of the album, not the original artist whose songs are covered.
+- Omit `album_artist` when the album-level credit cannot be reliably verified.
+- Store the value as an array of strings, consistent with the other fields in `TagsToSet`.
+
+
 YEAR:
 `year` = original release year of the specific recording/version being processed.
 Format exactly as `YYYY`.

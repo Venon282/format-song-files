@@ -1,4 +1,10 @@
 __pycache__
+*.egg-info/
 .venv
 *exiftool*
+test.py
+to_add.md
+config2.toml
+config3.toml
+infos_to_insert.json
 test.py

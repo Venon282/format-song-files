@@ -8,7 +8,7 @@ from pathlib import Path
 import re
 import mutagen
 import special_tag_reorganisation
-from collections import Iterable
+
 
 logger = logging.getLogger(__name__)
 

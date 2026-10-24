@@ -1,0 +1,244 @@
+[
+  {
+    "SourceFile": "E:\\music utils\\processing 3\\\u4e09\u4ee3\u76ee J SOUL BROTHERS from EXILE TRIBE \u29f8 \u300cR.Y.U.S.E.I.\u300dMusic Video [4-Gw0TAM6-Q].opus",
+    "NewFileName": "R.Y.U.S.E.I. - Sandaime J Soul Brothers from EXILE TRIBE (2014).opus",
+    "TagsToDelete": ["description", "synopsis", "purl", "date"],
+    "TagsToSet": {
+      "title": ["R.Y.U.S.E.I."],
+      "artist": ["Sandaime J Soul Brothers from EXILE TRIBE"],
+      "album": ["PLANET SEVEN"],
+      "album_artist": ["Sandaime J Soul Brothers from EXILE TRIBE"],
+      "year": ["2014"],
+      "genre": ["J-Pop", "Pop", "EDM", "Electronic", "Dance", "R&B"],
+      "style": ["Summer", "Promotional", "Male Voice"],
+      "mood": ["Energetic", "Upbeat", "Euphoric", "Driving", "Anthemic", "Uplifting", "Motivating", "Summery", "Determined", "Confident"],
+      "language": ["Japanese"],
+      "country": ["Japan"],
+      "decade": ["2010s"],
+      "comment": ["Tokyo City Keiba (TCK) 2014 Campaign", "EXILE TRIBE"]
+    }
+  },
+  {
+    "SourceFile": "E:\\music utils\\processing 3\\\u4e0d\u53ef\u5e78\u529b \u29f8 Vaundy \uff1aMUSIC VIDEO [Gbz2C2gQREI].opus",
+    "NewFileName": "Fukakouryoku - Vaundy (2019).opus",
+    "TagsToDelete": ["description", "synopsis", "purl", "date"],
+    "TagsToSet": {
+      "title": ["Fukakouryoku"],
+      "artist": ["Vaundy"],
+      "album": ["strobo"],
+      "album_artist": ["Vaundy"],
+      "year": ["2019"],
+      "genre": ["J-Pop", "Pop", "Dance"],
+      "style": ["Promotional", "Male Voice"],
+      "mood": ["Groovy", "Smooth", "Upbeat"],
+      "language": ["Japanese"],
+      "country": ["Japan"],
+      "decade": ["2010s"],
+      "comment": ["Spotify Town (Spotify Premium TV Commercial)", "Spotify"]
+    }
+  },
+  {
+    "SourceFile": "E:\\music utils\\processing 3\\\u4f0d\u4f70 Wu Bai&China Blue\u3010\u632a\u5a01\u7684\u68ee\u6797 Norwegian forest\u3011Official Music Video [gPpZJlE0Ca8].opus",
+    "NewFileName": "Norwegian Forest - Wu Bai;China Blue (1996).opus",
+    "TagsToDelete": ["description", "synopsis", "purl", "date"],
+    "TagsToSet": {
+      "title": ["Norwegian Forest"],
+      "artist": ["Wu Bai", "China Blue"],
+      "album": ["Ai Qing De Jin Tou"],
+      "album_artist": ["Wu Bai", "China Blue"],
+      "year": ["1996"],
+      "genre": ["Rock", "Pop Rock", "Mandopop"],
+      "style": ["Ballad", "Love Song", "Male Voice"],
+      "mood": ["Melancholic", "Sad", "Yearning", "Passionate", "Emotional", "Heartfelt", "Regretful", "Lonely", "Wistful", "Introspective", "Sentimental", "Bittersweet"],
+      "language": ["Mandarin"],
+      "country": ["Taiwan"],
+      "decade": ["1990s"]
+    }
+  },
+  {
+    "SourceFile": "E:\\music utils\\processing 3\\\u512a\u91cc - \u30c9\u30e9\u30a4\u30d5\u30e9\u30ef\u30fc \u29f8 THE FIRST TAKE [yXZd7xVdpJ0].opus",
+    "NewFileName": "Dry Flower (THE FIRST TAKE) - Yuuri (2020).opus",
+    "TagsToDelete": ["description", "synopsis", "purl", "date"],
+    "TagsToSet": {
+      "title": ["Dry Flower (THE FIRST TAKE)"],
+      "artist": ["Yuuri"],
+      "year": ["2020"],
+      "genre": ["J-Pop", "Pop", "Rock"],
+      "style": ["Live Performance", "Arrangement", "Ballad", "Love Song", "Male Voice"],
+      "mood": ["Sad", "Melancholic", "Emotional", "Heartfelt", "Passionate", "Regretful", "Mournful", "Intense", "Bittersweet", "Yearning"],
+      "language": ["Japanese"],
+      "country": ["Japan"],
+      "decade": ["2020s"],
+      "comment": ["THE FIRST TAKE #66"]
+    }
+  },
+  {
+    "SourceFile": "E:\\music utils\\processing 3\\\uc815\uad6d (Jung Kook) '3D (feat. Jack Harlow)' Official MV [mHNCM-YALSA].opus",
+    "NewFileName": "3D - Jung Kook;Jack Harlow (2023).opus",
+    "TagsToDelete": ["description", "synopsis", "purl", "date", "handler_name"],
+    "TagsToSet": {
+      "title": ["3D"],
+      "artist": ["Jung Kook", "Jack Harlow"],
+      "album": ["Golden"],
+      "album_artist": ["Jung Kook"],
+      "year": ["2023"],
+      "genre": ["Pop", "R&B", "Hip Hop"],
+      "style": ["Male Voice"],
+      "mood": ["Flirty", "Playful", "Confident", "Sensual", "Groovy", "Smooth", "Upbeat", "Cheeky"],
+      "language": ["English"],
+      "country": ["South Korea", "United States"],
+      "decade": ["2020s"],
+      "comment": ["BTS", "Big Hit Music", "HYBE"]
+    }
+  },
+  {
+    "SourceFile": "E:\\music utils\\processing 3\\\uc815\uad6d (Jung Kook) 'Dreamers' @ FIFA World Cup Qatar 2022 Opening Ceremony [jEdfjuG0Fx4].opus",
+    "NewFileName": "Dreamers (Live) - Jung Kook;Fahad Al Kubaisi (2022).opus",
+    "TagsToDelete": ["description", "synopsis", "purl", "date", "handler_name"],
+    "TagsToSet": {
+      "title": ["Dreamers (Live)"],
+      "artist": ["Jung Kook", "Fahad Al Kubaisi"],
+      "year": ["2022"],
+      "genre": ["Pop"],
+      "style": ["Live Performance", "Sport", "Theme Song", "Male Voice"],
+      "mood": ["Anthemic", "Uplifting", "Inspiring", "Motivating", "Energetic", "Empowering", "Triumphant", "Hopeful", "Rousing", "Spirited", "Festive"],
+      "language": ["English"],
+      "country": ["South Korea", "Qatar"],
+      "decade": ["2020s"],
+      "comment": ["FIFA World Cup Qatar 2022", "FIFA World Cup", "FIFA", "BTS"]
+    }
+  },
+  {
+    "SourceFile": "E:\\music utils\\processing 3\\\uc815\uad6d (Jung Kook) 'Seven (feat. Latto)' Official MV [QU9c0053UAU].opus",
+    "NewFileName": "Seven - Jung Kook;Latto (2023).opus",
+    "TagsToDelete": ["description", "synopsis", "purl", "date", "handler_name"],
+    "TagsToSet": {
+      "title": ["Seven"],
+      "artist": ["Jung Kook", "Latto"],
+      "album": ["Golden"],
+      "album_artist": ["Jung Kook"],
+      "year": ["2023"],
+      "genre": ["Pop", "Electronic", "Dance"],
+      "style": ["Male Voice", "Female Voice"],
+      "mood": ["Flirty", "Playful", "Cheeky", "Upbeat", "Summery", "Romantic", "Cheerful", "Groovy", "Sweet", "Bright", "Happy", "Sensual"],
+      "language": ["English"],
+      "country": ["South Korea", "United States"],
+      "decade": ["2020s"],
+      "comment": ["BTS", "Big Hit Music", "HYBE"]
+    }
+  },
+  {
+    "SourceFile": "E:\\music utils\\processing 3\\\uc815\uad6d (Jung Kook) 'Seven (feat. Latto)' Official Performance Video [1QYBiNRu1ok].opus",
+    "NewFileName": "Seven (Performance Video) - Jung Kook;Latto (2023).opus",
+    "TagsToDelete": ["description", "synopsis", "purl", "date"],
+    "TagsToSet": {
+      "title": ["Seven (Performance Video)"],
+      "artist": ["Jung Kook", "Latto"],
+      "album": ["Golden"],
+      "album_artist": ["Jung Kook"],
+      "year": ["2023"],
+      "genre": ["Pop", "Electronic", "Dance"],
+      "style": ["Male Voice", "Female Voice"],
+      "mood": ["Flirty", "Playful", "Cheeky", "Upbeat", "Summery", "Romantic", "Cheerful", "Groovy", "Sweet", "Bright", "Happy", "Sensual"],
+      "language": ["English"],
+      "country": ["South Korea", "United States"],
+      "decade": ["2020s"],
+      "comment": ["BTS", "Big Hit Music", "HYBE"]
+    }
+  },
+  {
+    "SourceFile": "E:\\music utils\\processing 3\\\uc815\uad6d (Jung Kook) 'Standing Next to You' Official MV [UNo0TG9LwwI].opus",
+    "NewFileName": "Standing Next to You - Jung Kook (2023).opus",
+    "TagsToDelete": ["description", "synopsis", "purl", "date", "handler_name"],
+    "TagsToSet": {
+      "title": ["Standing Next to You"],
+      "artist": ["Jung Kook"],
+      "album": ["Golden"],
+      "album_artist": ["Jung Kook"],
+      "year": ["2023"],
+      "genre": ["Pop", "Funk", "Disco"],
+      "style": ["Male Voice"],
+      "mood": ["Groovy", "Confident", "Romantic", "Passionate", "Energetic", "Upbeat", "Heartfelt", "Determined"],
+      "language": ["English"],
+      "country": ["South Korea"],
+      "decade": ["2020s"],
+      "comment": ["BTS", "Big Hit Music", "HYBE"]
+    }
+  },
+  {
+    "SourceFile": "E:\\music utils\\processing 3\\\uc9c0\ubbfc (Jimin) 'Like Crazy' Official MV [nOI67IDlNMQ].opus",
+    "NewFileName": "Like Crazy - Jimin (2023).opus",
+    "TagsToDelete": ["description", "synopsis", "purl", "date"],
+    "TagsToSet": {
+      "title": ["Like Crazy"],
+      "artist": ["Jimin"],
+      "album": ["Face"],
+      "album_artist": ["Jimin"],
+      "year": ["2023"],
+      "genre": ["Synth-Pop", "Pop", "K-Pop", "Electronic"],
+      "style": ["Male Voice"],
+      "mood": ["Dreamy", "Lonely", "Melancholic", "Bittersweet", "Yearning", "Emotional", "Vulnerable", "Atmospheric", "Intense"],
+      "language": ["Korean"],
+      "country": ["South Korea"],
+      "decade": ["2020s"],
+      "comment": ["BTS", "Big Hit Music", "HYBE"]
+    }
+  },
+  {
+    "SourceFile": "E:\\music utils\\processing 3\\\uc9c0\ubbfc (Jimin) 'Set Me Free Pt.2' Official MV [UaywgAqcLxI].opus",
+    "NewFileName": "Set Me Free Pt.2 - Jimin (2023).opus",
+    "TagsToDelete": ["description", "synopsis", "purl", "date"],
+    "TagsToSet": {
+      "title": ["Set Me Free Pt.2"],
+      "artist": ["Jimin"],
+      "album": ["Face"],
+      "album_artist": ["Jimin"],
+      "year": ["2023"],
+      "genre": ["Hip Hop", "Rap", "Pop", "K-Pop"],
+      "style": ["Male Voice"],
+      "mood": ["Intense", "Defiant", "Empowering", "Determined", "Triumphant", "Energetic", "Fiery", "Driving", "Confident", "Rebellious", "Fighting Spirit", "Dramatic"],
+      "language": ["Korean", "English"],
+      "country": ["South Korea"],
+      "decade": ["2020s"],
+      "comment": ["BTS", "Big Hit Music", "HYBE"]
+    }
+  },
+  {
+    "SourceFile": "E:\\music utils\\processing 3\\\uc9c0\ubbfc (Jimin) 'Who' Official MV [Av9DvtlJ9_M].opus",
+    "NewFileName": "Who - Jimin (2024).opus",
+    "TagsToDelete": ["description", "synopsis", "purl", "date"],
+    "TagsToSet": {
+      "title": ["Who"],
+      "artist": ["Jimin"],
+      "album": ["Muse"],
+      "album_artist": ["Jimin"],
+      "year": ["2024"],
+      "genre": ["Dance-Pop", "Pop", "R&B", "Hip Hop", "K-Pop", "Dance"],
+      "style": ["Male Voice"],
+      "mood": ["Yearning", "Romantic", "Energetic", "Upbeat", "Hopeful", "Smooth", "Groovy", "Passionate"],
+      "language": ["English"],
+      "country": ["South Korea"],
+      "decade": ["2020s"],
+      "comment": ["BTS", "Big Hit Music", "HYBE"]
+    }
+  },
+  {
+    "SourceFile": "E:\\music utils\\processing 3\\\uc9c4 (Jin) 'The Astronaut' Official MV [c6ASQOwKkhk].opus",
+    "NewFileName": "The Astronaut - Jin (2022).opus",
+    "TagsToDelete": ["description", "synopsis", "purl", "date"],
+    "TagsToSet": {
+      "title": ["The Astronaut"],
+      "artist": ["Jin"],
+      "album": ["The Astronaut"],
+      "album_artist": ["Jin"],
+      "year": ["2022"],
+      "genre": ["Pop Rock", "Pop", "Rock"],
+      "style": ["Male Voice"],
+      "mood": ["Heartfelt", "Dreamy", "Sincere", "Warm", "Hopeful", "Tender", "Bittersweet", "Sentimental", "Emotional", "Soaring", "Comforting"],
+      "language": ["English", "Korean"],
+      "country": ["South Korea"],
+      "decade": ["2020s"],
+      "comment": ["BTS", "Big Hit Music", "HYBE"]
+    }
+  }
+]

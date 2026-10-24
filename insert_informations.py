@@ -24,7 +24,7 @@ def insertInformations(
     #    raise ValueError(f'Found {len(all_files)} files for {len(entries)} entries')
     
     if tag_reorganisation is not None:
-        getattr(special_tag_reorganisation, tag_reorganisation)(entries, exclude_tags = ('title', 'artist', 'year', 'album')) # inplace
+        getattr(special_tag_reorganisation, tag_reorganisation)(entries, exclude_tags = ('title', 'artist', 'album_artist', 'year', 'album')) # inplace
         
     # Handle metadatas
     files_error = {}
@@ -50,10 +50,10 @@ def insertInformations(
             
             if deplace_to_path is not None:
                 artist = entry['TagsToSet'].get('artist', ['Unknow'])
-                artist = ', '.join(artist).replace('/', '-').replace('\\', '-')
+                artist = ', '.join(artist).replace('/', '-').replace('\\', '-').replace(':', '-')
                     
                 album = entry['TagsToSet'].get('album', ['Unknow'])
-                album = ', '.join(album).replace('/', '-').replace('\\', '-')
+                album = ', '.join(album).replace('/', '-').replace('\\', '-').replace(':', '-')
   
                 dest_file = sanitizeFullPath(os.path.join(deplace_to_path, artist, album, os.path.basename(source_file)))
                 if os.path.exists(dest_file):

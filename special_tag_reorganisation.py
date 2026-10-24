@@ -7,7 +7,7 @@ def plexAll(entries: list, exclude_tags: tuple[str, ...] = ('title', 'artist', '
     for entry in entries:
         plex(entry['TagsToSet'], exclude_tags)
 
-def plex(metadatas:dict, exclude_tags: tuple[str, ...] = ('title', 'artist', 'year', 'album')):
+def plex(metadatas:dict, exclude_tags: tuple[str, ...] = ('title', 'artist', 'album_artist', 'year', 'album')):
     values = [
         item
         for key, metadata in metadatas.items()
