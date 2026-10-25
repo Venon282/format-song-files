@@ -38,7 +38,7 @@ All values inside `TagsToSet` must be arrays of strings, even when there is only
 Do not output Markdown, explanations, comments, or code fences.
 Output ONLY raw valid JSON containing a single array of objects with at the end eventually, file proposal tags and uncertainty.
 
-Choose names that everyone can read (e.g さユり -> Sayuri)
+Choose names that everyone can read in latin alphabet (e.g さユり -> Sayuri)
 
 FILENAME:
 Use this format:
@@ -102,6 +102,7 @@ Rules:
 - When `all_possible_tags.json` explicitly defines a parent/child hierarchy, include both the specific genre and its allowed parent genre(s).
 - Do not assign genres merely because they are common for the artist or region.
 - Add ALL the corresponding genres that are in `all_possible_tags.json`.
+- For instruments (e.g. Piano, Violin, etc), only when no lyrics and not too much other instrunments.
 
 STYLE:
 `style` = media type, structural, performance, or format-related classification.
