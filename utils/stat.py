@@ -21,25 +21,21 @@ def countMetadatas(
     
     counter = defaultdict(lambda: defaultdict(int))
         
-    with exiftool.ExifToolHelper(
-            executable=exiftool_exe_path,
-            encoding="utf-8",
-        ) as et:
+
+    files = iterFiles(root)
+    if max_files is not None:
+        files = list(files)[:max_files]
         
-        files = iterFiles(root)
-        if max_files is not None:
-            files = list(files)[:max_files
-                                ]
-        files_metadatas = extractMetadatas(files, et, verbose=verbose)
-        for metadatas in tqdm(files_metadatas, desc='Count metadatas:', unit='file', mininterval=1, disable=not verbose):
-            for key, values in metadatas.items():
-                if keys is not None and key not in keys:
-                    continue
-                if not isinstance(values, list):
-                    values = [values]
-                    
-                for value in values:
-                    counter[key][value] +=1
+    files_metadatas = extractMetadatas(files, exiftool_exe_path, verbose=verbose)
+    for metadatas in tqdm(files_metadatas, desc='Count metadatas:', unit='file', mininterval=1, disable=not verbose):
+        for key, values in metadatas.items():
+            if keys is not None and key not in keys:
+                continue
+            if not isinstance(values, list):
+                values = [values]
+                
+            for value in values:
+                counter[key][value] +=1
         
     
     if sort in ("asc", "desc"):

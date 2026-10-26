@@ -7,5 +7,10 @@ build-backend = "setuptools.build_meta"
 name = "format_song_files"
 version = "0.1.0"
 
+dependencies = [
+    "regex>=2026.9.29",
+    "pandas>=3.1.0"
+]
+
 [tool.setuptools]
 packages = ["scripts", "utils"]

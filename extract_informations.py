@@ -20,7 +20,7 @@ def extractInformations(
             path = entry.path       
             try:
                 raw_output = et.execute("-a", path)
-            except exiftool.exceptions.ExifToolExecuteError as e:
+            except Exception as e:
                 print(f"\n[ERROR] ExifTool failed for: {path}")
                 print(f"Exception: {e}")
                 print(f"args: {e.args}")

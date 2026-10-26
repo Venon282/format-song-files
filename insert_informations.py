@@ -2,10 +2,13 @@ import os
 import json
 import mutagen
 import traceback
+import pandas as pd 
+from dataclasses import asdict
 
 import special_tag_reorganisation
 from format_song_files.utils import readConfig, convertToOpus, sanitizeFullPath, setTags, deleteTags, renameFile
-    
+from utils.audio_quality import rankAudioQuality
+from utils.file import getDestination
     
 def insertInformations(
     music_path:str,
@@ -49,15 +52,26 @@ def insertInformations(
             source_file = renameFile(entry['NewFileName'], source_file)
             
             if deplace_to_path is not None:
-                artist = entry['TagsToSet'].get('artist', ['Unknow'])
-                artist = ', '.join(artist).replace('/', '-').replace('\\', '-').replace(':', '-')
+                # artist = entry['TagsToSet'].get('artist', ['Unknow'])
+                # artist = ', '.join(artist).replace('/', '-').replace('\\', '-').replace(':', '-')
                     
-                album = entry['TagsToSet'].get('album', ['Unknow'])
-                album = ', '.join(album).replace('/', '-').replace('\\', '-').replace(':', '-')
+                # album = entry['TagsToSet'].get('album', ['Unknow'])
+                # album = ', '.join(album).replace('/', '-').replace('\\', '-').replace(':', '-')
   
-                dest_file = sanitizeFullPath(os.path.join(deplace_to_path, artist, album, os.path.basename(source_file)))
+                # dest_file = sanitizeFullPath(os.path.join(deplace_to_path, artist, album, os.path.basename(source_file)))
+                dest_file = getDestination(music_root=deplace_to_path, file_path=source_file, file_metadatas=entry['TagsToSet'])
                 if os.path.exists(dest_file):
-                    files_error[source_file] = ["File already exist in destination.", entry]
+                    ranking, decisive = rankAudioQuality([source_file, dest_file], keep_order=True)
+                    ranking = [asdict(x) for x in ranking]
+                    for rank in ranking:
+                        rank['notes'] = ', '.join(rank['notes'])
+                    df = pd.DataFrame(
+                        ranking,
+                        index=["File 1", "File 2"],
+                    ).T
+                    print(df.to_string())
+                    
+                    files_error[source_file] = [f"File already exist in destination.", entry]
                     continue
                 
                 os.makedirs(os.path.dirname(dest_file), exist_ok=True)
@@ -67,7 +81,7 @@ def insertInformations(
             continue
         
     for source_file, [error, entry] in files_error.items():
-        print(f'{source_file}: {error}\n{entry}\n')    
+        print(f'{source_file}: {error}')   # \n{entry}\n
              
 if __name__ == "__main__":
     import argparse
