@@ -64,7 +64,7 @@ def insertInformations(
                     ranking, decisive = rankAudioQuality([source_file, dest_file], keep_order=True)
                     ranking = [asdict(x) for x in ranking]
                     for rank in ranking:
-                        rank['notes'] = ', '.join(rank['notes'])
+                        rank['notes'] = '' #'\n'.join(rank['notes'])
                     df = pd.DataFrame(
                         ranking,
                         index=["File 1", "File 2"],

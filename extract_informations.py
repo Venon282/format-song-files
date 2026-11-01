@@ -19,7 +19,8 @@ def extractInformations(
             
             path = entry.path       
             try:
-                raw_output = et.execute("-a", path)
+                raw_bytes = et.execute("-a", path, raw_bytes=True)
+                raw_output = raw_bytes.decode("utf-8", errors="replace")
             except Exception as e:
                 print(f"\n[ERROR] ExifTool failed for: {path}")
                 print(f"Exception: {e}")

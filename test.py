@@ -10,7 +10,6 @@ from utils.logging_utils import getLogger
 logger = getLogger(__name__)
 
 def timeTestExtractMetadatasBatchSize(dir_path, exiftool_exe_path):
-    with exiftool.ExifToolHelper(executable=exiftool_exe_path, encoding="utf-8") as eh:
         from utils.metadata import extractMetadatas
         from utils.file import iterFiles
         
@@ -22,12 +21,12 @@ def timeTestExtractMetadatasBatchSize(dir_path, exiftool_exe_path):
         for batch_size in batch_sizes:
             print(f'Process {batch_size}')
             start = time.perf_counter()
-            extractMetadatas(files, eh, verbose=True, batch_size=batch_size)
+            extractMetadatas(files, exiftool_exe_path, verbose=True, batch_size=batch_size)
             end = time.perf_counter() - start
             results.append(end)
             
         fig = plt.figure(figsize=(12, 8))
-        plt.plot(batch_sizes, results)
+        plt.plot(batch_sizes, results, marker='o')
         plt.legend()
         plt.xscale('log')
         plt.xlabel("Batch size")
@@ -35,6 +34,33 @@ def timeTestExtractMetadatasBatchSize(dir_path, exiftool_exe_path):
         plt.title("Metadata extraction performance")
         plt.grid(True)
         plt.show()
+        
+def timeTestExtractMetadatasWithWorkers(dir_path, exiftool_exe_path):
+        from utils.metadata import extractMetadatas
+        from utils.file import iterFiles
+        
+        quantity = 5000
+        workers = [0, 2, 4, 6, 8, 10, 12]
+        file_iter = iterFiles(dir_path)
+        files = list(file_iter)[:quantity]
+        results = []
+        for worker in workers:
+            print(f'Process {worker} workers')
+            start = time.perf_counter()
+            extractMetadatas(files, exiftool_exe_path, verbose=True, batch_size=100, max_workers=worker)
+            end = time.perf_counter() - start
+            results.append(end)
+            
+            
+        fig = plt.figure(figsize=(12, 8))
+        plt.plot(workers, results, marker='o')
+        plt.legend()
+        plt.xlabel("Max workers")
+        plt.ylabel("Execution time (seconds)")
+        plt.title("Metadata extraction performance")
+        plt.grid(True)
+        plt.show()
+        
 def timeTestExtractInfosVsMetadatas(dir_path, exiftool_exe_path):
     from utils.stat import countMetadatas
     from utils.metadata import extractMetadatas
@@ -119,7 +145,9 @@ if __name__ == '__main__':
     music_path = r'E:\music'
     todo_path = r'E:\music utils\todo'
     
+    timeTestExtractMetadatasWithWorkers(music_path, exiftool_exe_path)
+    
     
     #fileWithNonLatinCharFromServerToTodo(music_path, todo_path, exiftool_exe_path)
-    
+
             

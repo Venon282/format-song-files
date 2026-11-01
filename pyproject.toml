@@ -1,4 +1,4 @@
-# install with pip install -e .
+# install with pip install -e ".[visu]"
 [build-system]
 requires = ["setuptools>=61.0.0"]
 build-backend = "setuptools.build_meta"
@@ -10,6 +10,13 @@ version = "0.1.0"
 dependencies = [
     "regex>=2026.9.29",
     "pandas>=3.1.0"
+]
+
+[project.optional-dependencies]
+visu = [
+    "matplotlib",
+    "numpy",
+    "scipy"
 ]
 
 [tool.setuptools]

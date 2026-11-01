@@ -1,176 +1,242 @@
 [
   {
-    "SourceFile": "E:\\music utils\\processing 3\\01-. Foncho - Oye.mp3",
-    "NewFileName": "Oye - Foncho.mp3",
-    "TagsToDelete": ["composer", "comment", "commentspa", "encodedby", "userdefinedurl", "copyright", "lyricsspa", "originalartist"],
+    "SourceFile": "E:\\music utils\\processing 2\\Bohemian Rhapsody (Salsa & Reggaeton Version).mp3",
+    "NewFileName": "Bohemian Rhapsody (Salsa & Reggaeton Version).mp3",
+    "TagsToDelete": [],
     "TagsToSet": {
-      "title": ["Oye"],
-      "artist": ["Foncho"],
-      "album": ["Ponle Sabor"],
-      "album_artist": ["Foncho"],
-      "genre": ["Latin", "Reggaeton"],
-      "style": ["Male Voice", "Party"],
-      "mood": ["Energetic", "Upbeat", "Groovy"],
-      "language": ["Spanish"]
+      "title": ["Bohemian Rhapsody (Salsa & Reggaeton Version)"],
+      "genre": ["Latin", "Salsa", "Reggaeton"],
+      "style": ["Cover", "Reimagining"],
+      "mood": ["Energetic", "Upbeat", "Groovy", "Festive", "Tropical", "Playful"]
     }
   },
   {
-    "SourceFile": "E:\\music utils\\processing 3\\01-aventura-el_pecador.mp3",
-    "NewFileName": "El Pecador - Aventura.mp3",
-    "TagsToDelete": ["comment", "encodedby", "supplier", "rippingtool", "ripdate", "releasetype", "date"],
+    "SourceFile": "E:\\music utils\\processing 2\\Bohemian Rhapsody - Queen.mp3",
+    "NewFileName": "Bohemian Rhapsody - Queen (1975).mp3",
+    "TagsToDelete": [
+      "encodedby",
+      "wmmediaclassprimaryid",
+      "wmmediaclasssecondaryid",
+      "wmcontentid",
+      "wmuniquefileidentifier",
+      "wmcollectionid",
+      "wmcollectiongroupid",
+      "wmprovider"
+    ],
     "TagsToSet": {
-      "title": ["El Pecador"],
-      "artist": ["Aventura"],
-      "genre": ["Latin"],
-      "style": ["Male Voice"],
-      "mood": ["Romantic", "Emotional", "Heartfelt"],
-      "language": ["Spanish"],
-      "country": ["United States"]
+      "title": ["Bohemian Rhapsody"],
+      "artist": ["Queen"],
+      "album": ["Wayne's World"],
+      "album_artist": ["Various Artists"],
+      "year": ["1975"],
+      "genre": ["Rock", "Hard Rock"],
+      "style": ["Male Voice", "OST", "Insert Song", "Narrative"],
+      "mood": ["Dramatic", "Epic", "Emotional", "Tragic", "Regretful", "Majestic", "Passionate", "Intense", "Anthemic", "Defiant"],
+      "language": ["English"],
+      "country": ["United Kingdom"],
+      "decade": ["1970s"],
+      "comment": ["Wayne's World", "Paramount Pictures"]
     }
   },
   {
-    "SourceFile": "E:\\music utils\\processing 3\\01-quantic_and_nikodemus-mi_swing_es_tropical.mp3",
-    "NewFileName": "Mi Swing Es Tropical - Quantic;Nickodemus.mp3",
-    "TagsToDelete": ["comment", "encodedby", "supplier", "rippingtool", "ripdate", "releasetype", "userdefinedurl", "date"],
+    "SourceFile": "E:\\music utils\\processing 2\\Bondax_-_All_I_See.mp3",
+    "NewFileName": "All I See - Bondax;Tanya Lacey (2014).mp3",
+    "TagsToDelete": [],
     "TagsToSet": {
-      "title": ["Mi Swing Es Tropical"],
-      "artist": ["Quantic", "Nickodemus"],
-      "genre": ["Latin", "Electronic", "Downtempo", "World"],
-      "style": ["Male Voice"],
-      "mood": ["Groovy", "Tropical", "Upbeat", "Summery", "Chill"],
-      "country": ["United Kingdom", "United States"]
+      "title": ["All I See"],
+      "artist": ["Bondax", "Tanya Lacey"],
+      "year": ["2014"],
+      "genre": ["House", "Dance", "Electronic", "Pop"],
+      "style": ["Female Voice"],
+      "mood": ["Summery", "Upbeat", "Happy", "Groovy", "Uplifting", "Bright", "Warm"],
+      "language": ["English"],
+      "country": ["United Kingdom"],
+      "decade": ["2010s"]
     }
   },
   {
-    "SourceFile": "E:\\music utils\\processing 3\\01. Querida [Versi\u00f3n Bachata].mp3",
-    "NewFileName": "Querida (Versión Bachata) - Alex Bueno.mp3",
-    "TagsToDelete": ["album", "comment", "wmmediaclassprimaryid", "wmmediaclasssecondaryid", "wmcontentid", "wmuniquefileidentifier", "wmcollectionid", "wmcollectiongroupid", "wmprovider"],
+    "SourceFile": "E:\\music utils\\processing 2\\BONDI - Trippin (Gabe Remix).mp3",
+    "NewFileName": "Trippin (Gabe Remix) - Gabe (2016).mp3",
+    "TagsToDelete": [],
     "TagsToSet": {
-      "title": ["Querida (Versión Bachata)"],
-      "artist": ["Alex Bueno"],
-      "genre": ["Latin"],
-      "style": ["Cover", "Love Song", "Male Voice"],
-      "mood": ["Romantic", "Heartfelt", "Sentimental", "Yearning"],
-      "language": ["Spanish"],
-      "country": ["Dominican Republic"]
+      "title": ["Trippin (Gabe Remix)"],
+      "artist": ["Gabe"],
+      "album": ["Those Days"],
+      "album_artist": ["BONDI"],
+      "year": ["2016"],
+      "genre": ["Deep House", "House", "Electronic", "Dance"],
+      "style": ["Remix"],
+      "mood": ["Groovy", "Smooth", "Driving", "Atmospheric", "Dreamy"],
+      "country": ["Germany"],
+      "decade": ["2010s"]
     }
   },
   {
-    "SourceFile": "E:\\music utils\\processing 3\\01.- UPA Dance - contigo (my baby) - [EMG].mp3",
-    "NewFileName": "Contigo (My Baby) - Upa Dance (2005).mp3",
-    "TagsToDelete": ["commentxxx", "indications", "crc"],
+    "SourceFile": "E:\\music utils\\processing 2\\Boney M - Daddy Cool (Chris Moody & DJ Riz Remix).mp3",
+    "NewFileName": "Daddy Cool (Chris Moody & DJ Riz Remix) - Chris Moody;DJ Riz (2011).mp3",
+    "TagsToDelete": [
+      "comment"
+    ],
     "TagsToSet": {
-      "title": ["Contigo (My Baby)"],
-      "artist": ["Upa Dance"],
-      "album": ["Contigo"],
-      "album_artist": ["Upa Dance"],
-      "year": ["2005"],
-      "genre": ["Pop", "Dance", "Dance-Pop"],
-      "style": ["Original Song"],
-      "mood": ["Upbeat", "Energetic", "Flirty", "Sensual", "Romantic"],
-      "language": ["Spanish", "English"],
-      "country": ["Spain"],
-      "decade": ["2000s"],
-      "comment": ["Un Paso Adelante", "Antena 3"]
+      "title": ["Daddy Cool (Chris Moody & DJ Riz Remix)"],
+      "artist": ["Chris Moody", "DJ Riz"],
+      "year": ["2011"],
+      "genre": ["Disco", "House", "Dance", "Electronic"],
+      "style": ["Remix", "Male Voice"],
+      "mood": ["Groovy", "Upbeat", "Energetic", "Playful", "Nostalgic", "Cheerful"],
+      "language": ["English"],
+      "country": ["United States"],
+      "decade": ["2010s"]
     }
   },
   {
-    "SourceFile": "E:\\music utils\\processing 3\\01.-Carlos Baute - Te regalo.mp3",
-    "NewFileName": "Te Regalo - Carlos Baute (2005).mp3",
-    "TagsToDelete": ["comment", "commentspa", "encodedby"],
+    "SourceFile": "E:\\music utils\\processing 2\\Boney M - Rivers Of Babylon.mp3",
+    "NewFileName": "Rivers of Babylon - Boney M. (1978).mp3",
+    "TagsToDelete": [
+      "comment",
+      "comment (fre)",
+      "wmmediaclassprimaryid",
+      "wmmediaclasssecondaryid",
+      "wmcontentid",
+      "wmuniquefileidentifier",
+      "wmcollectionid",
+      "wmcollectiongroupid",
+      "wmprovider"
+    ],
     "TagsToSet": {
-      "title": ["Te Regalo"],
-      "artist": ["Carlos Baute"],
-      "album": ["Baute"],
-      "album_artist": ["Carlos Baute"],
-      "year": ["2005"],
-      "genre": ["Latin Pop", "Pop", "Latin"],
-      "style": ["Love Song", "Male Voice", "Original Song"],
-      "mood": ["Romantic", "Sweet", "Sincere", "Heartfelt", "Tender", "Happy"],
-      "language": ["Spanish"],
-      "country": ["Venezuela"],
-      "decade": ["2000s"]
+      "title": ["Rivers of Babylon"],
+      "artist": ["Boney M."],
+      "album": ["Nightflight to Venus"],
+      "album_artist": ["Boney M."],
+      "year": ["1978"],
+      "genre": ["Disco", "Reggae", "Dance", "Pop"],
+      "style": ["Cover", "Religious", "Female Voice"],
+      "mood": ["Spiritual", "Mournful", "Yearning", "Hopeful", "Sincere", "Warm"],
+      "language": ["English"],
+      "country": ["Germany"],
+      "decade": ["1970s"]
     }
   },
   {
-    "SourceFile": "E:\\music utils\\processing 3\\01_depeche_mode-just_cant_get_enough.mp3",
-    "NewFileName": "Just Can't Get Enough - Depeche Mode (1981).mp3",
-    "TagsToDelete": ["comment", "encodedby"],
+    "SourceFile": "E:\\music utils\\processing 2\\Boney_M._-_Sunny_(1976).mp3",
+    "NewFileName": "Sunny - Boney M. (1976).mp3",
+    "TagsToDelete": [],
     "TagsToSet": {
-      "title": ["Just Can't Get Enough"],
-      "artist": ["Depeche Mode"],
-      "year": ["1981"],
-      "genre": ["Synth-Pop", "New Wave", "Pop", "Electronic"],
-      "style": ["Love Song", "Male Voice", "Original Song"],
-      "mood": ["Upbeat", "Cheerful", "Happy", "Energetic", "Romantic", "Youthful", "Bright", "Playful"],
+      "title": ["Sunny"],
+      "artist": ["Boney M."],
+      "year": ["1976"],
+      "genre": ["Disco", "Dance", "Pop"],
+      "style": ["Cover", "Female Voice", "Love Song"],
+      "mood": ["Happy", "Cheerful", "Bright", "Warm", "Upbeat", "Groovy", "Sweet"],
+      "language": ["English"],
+      "country": ["Germany"],
+      "decade": ["1970s"]
+    }
+  },
+  {
+    "SourceFile": "E:\\music utils\\processing 2\\Boney_M_-_Rivers_of_Babylon.mp3",
+    "NewFileName": "Rivers of Babylon - Boney M. (1978).mp3",
+    "TagsToDelete": [],
+    "TagsToSet": {
+      "title": ["Rivers of Babylon"],
+      "artist": ["Boney M."],
+      "album": ["Nightflight to Venus"],
+      "album_artist": ["Boney M."],
+      "year": ["1978"],
+      "genre": ["Disco", "Reggae", "Dance", "Pop"],
+      "style": ["Cover", "Religious", "Female Voice"],
+      "mood": ["Spiritual", "Mournful", "Yearning", "Hopeful", "Sincere", "Warm"],
+      "language": ["English"],
+      "country": ["Germany"],
+      "decade": ["1970s"]
+    }
+  },
+  {
+    "SourceFile": "E:\\music utils\\processing 2\\Bonnie Pointer - Heaven must have sent you.mp3",
+    "NewFileName": "Heaven Must Have Sent You - Bonnie Pointer.mp3",
+    "TagsToDelete": [
+      "comment"
+    ],
+    "TagsToSet": {
+      "title": ["Heaven Must Have Sent You"],
+      "artist": ["Bonnie Pointer"],
+      "genre": ["Disco", "Dance", "Funk"],
+      "style": ["Cover", "Female Voice", "Love Song"],
+      "mood": ["Upbeat", "Groovy", "Energetic", "Romantic", "Cheerful", "Euphoric"],
+      "language": ["English"],
+      "country": ["United States"],
+      "decade": ["1970s"]
+    }
+  },
+  {
+    "SourceFile": "E:\\music utils\\processing 2\\Bonnie Tyler - Total Eclipse of the Heart.mp3",
+    "NewFileName": "Total Eclipse of the Heart - Bonnie Tyler (1983).mp3",
+    "TagsToDelete": [],
+    "TagsToSet": {
+      "title": ["Total Eclipse of the Heart"],
+      "artist": ["Bonnie Tyler"],
+      "album": ["Faster Than the Speed of Night"],
+      "album_artist": ["Bonnie Tyler"],
+      "year": ["1983"],
+      "genre": ["Pop Rock", "Rock", "Pop"],
+      "style": ["Ballad", "Love Song", "Female Voice"],
+      "mood": ["Dramatic", "Epic", "Emotional", "Passionate", "Yearning", "Heartfelt", "Intense", "Anthemic", "Soaring", "Romantic"],
       "language": ["English"],
       "country": ["United Kingdom"],
       "decade": ["1980s"]
     }
   },
   {
-    "SourceFile": "E:\\music utils\\processing 3\\1 Blow (Key d bootleg).mp3",
-    "NewFileName": "Blow (Key d bootleg).mp3",
-    "TagsToDelete": ["comment"],
+    "SourceFile": "E:\\music utils\\processing 2\\Bontan - The Revolution (UMEK Remix) www.music-team.net.mp3",
+    "NewFileName": "The Revolution (UMEK Remix) - UMEK (2013).mp3",
+    "TagsToDelete": [
+      "comment"
+    ],
     "TagsToSet": {
-      "title": ["Blow (Key d bootleg)"],
-      "genre": ["Electronic"],
+      "title": ["The Revolution (UMEK Remix)"],
+      "artist": ["UMEK"],
+      "album": ["Hit It From The Back EP"],
+      "album_artist": ["Bontan"],
+      "year": ["2013"],
+      "genre": ["House", "Techno", "Electronic", "Dance"],
       "style": ["Remix"],
-      "mood": ["Energetic"]
+      "mood": ["Driving", "Groovy", "Energetic"],
+      "country": ["Slovenia"],
+      "decade": ["2010s"]
     }
   },
   {
-    "SourceFile": "E:\\music utils\\processing 3\\1 bodeguita mueva la collita.mp3",
-    "NewFileName": "Bodeguita Mueva la Collita.mp3",
+    "SourceFile": "E:\\music utils\\processing 2\\Bontan__Sonny_Fodera_-_Want_To_Know_(Origina.mp3",
+    "NewFileName": "Want To Know (Original Mix) - Bontan;Sonny Fodera (2015).mp3",
     "TagsToDelete": [],
     "TagsToSet": {
-      "title": ["Bodeguita Mueva la Collita"],
-      "genre": ["Latin"],
-      "style": ["Party"],
-      "mood": ["Energetic"]
+      "title": ["Want To Know (Original Mix)"],
+      "artist": ["Bontan", "Sonny Fodera"],
+      "album": ["Always You EP"],
+      "album_artist": ["Bontan", "Sonny Fodera"],
+      "year": ["2015"],
+      "genre": ["Deep House", "House", "Electronic", "Dance"],
+      "style": ["Original Song"],
+      "mood": ["Groovy", "Smooth", "Driving", "Atmospheric"],
+      "country": ["United Kingdom", "Australia"],
+      "decade": ["2010s"]
     }
   },
   {
-    "SourceFile": "E:\\music utils\\processing 3\\1 ludacris-vs-dillon-francis_move-bitch-dj-d.mp3",
-    "NewFileName": "Move Bitch (DJ Denya Keks Mash Up).mp3",
-    "TagsToDelete": ["comment", "encodedby"],
+    "SourceFile": "E:\\music utils\\processing 2\\Bontan__Sonny_Fodera_-_Want_To_Know_(Original_Mix)_[Suara].mp3",
+    "NewFileName": "Want To Know (Original Mix) - Bontan;Sonny Fodera (2015).mp3",
+    "TagsToDelete": [],
     "TagsToSet": {
-      "title": ["Move Bitch (DJ Denya Keks Mash Up)"],
-      "genre": ["Hip Hop", "Rap", "Mashup", "Electronic"],
-      "style": ["Remix", "Male Voice"],
-      "mood": ["Aggressive", "Energetic", "Rowdy", "Cheeky"],
-      "language": ["English"]
-    }
-  },
-  {
-    "SourceFile": "E:\\music utils\\processing 3\\1.(Merengue)Oro Solido - El Baile Del Beeper (Remix).mp3",
-    "NewFileName": "El Baile del Beeper (Remix).mp3",
-    "TagsToDelete": ["comment"],
-    "TagsToSet": {
-      "title": ["El Baile del Beeper (Remix)"],
-      "genre": ["Latin", "Dance"],
-      "style": ["Remix", "Male Voice", "Party"],
-      "mood": ["Upbeat", "Festive", "Energetic", "Cheerful", "Groovy"],
-      "language": ["Spanish"],
-      "country": ["Dominican Republic"]
-    }
-  },
-  {
-    "SourceFile": "E:\\music utils\\processing 3\\1.Elvis Crespo - La Cerveza (Merengue).mp3",
-    "NewFileName": "La Cerveza - Elvis Crespo (2002).mp3",
-    "TagsToDelete": ["comment", "peakvalue", "averagelevel"],
-    "TagsToSet": {
-      "title": ["La Cerveza"],
-      "artist": ["Elvis Crespo"],
-      "album": ["Urbano"],
-      "album_artist": ["Elvis Crespo"],
-      "year": ["2002"],
-      "genre": ["Latin", "Dance"],
-      "style": ["Drinking Song", "Party", "Male Voice", "Original Song"],
-      "mood": ["Festive", "Upbeat", "Cheerful", "Playful", "Energetic", "Cheeky"],
-      "language": ["Spanish"],
-      "country": ["Puerto Rico"],
-      "decade": ["2000s"]
+      "title": ["Want To Know (Original Mix)"],
+      "artist": ["Bontan", "Sonny Fodera"],
+      "album": ["Always You EP"],
+      "album_artist": ["Bontan", "Sonny Fodera"],
+      "year": ["2015"],
+      "genre": ["Deep House", "House", "Electronic", "Dance"],
+      "style": ["Original Song"],
+      "mood": ["Groovy", "Smooth", "Driving", "Atmospheric"],
+      "country": ["United Kingdom", "Australia"],
+      "decade": ["2010s"]
     }
   }
 ]

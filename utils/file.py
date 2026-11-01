@@ -159,6 +159,10 @@ def getDestination(music_root:str, file_path: str, file_metadatas: dict):
     artist = _helper(['album_artist', 'AlbumArtist', 'artist', 'Artist'])    
     album = _helper(['album', 'Album'])
     
+    if ';' in artist or ';' in album:
+        shutil.move(file_path, os.path.join(r'E:\music utils\todo\redo', os.path.basename(file_path)))
+        logger.warning(f'{os.path.basename(file_path)} `;` found in the artist:{artist} or album{album} element')
+    
     return sanitizeFullPath(os.path.join(music_root, artist, album, os.path.basename(file_path)))
         
     

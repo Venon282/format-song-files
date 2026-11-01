@@ -13,7 +13,7 @@ from utils.audio_quality import rankAudioQuality
 logger = getLogger(__name__)
 
 def deplaceAllToGoodDest(args):
-    metadatas = extractMetadatas(args.path, exiftool_exe_path=args.exiftool_exe_path, verbose=args.verbose)
+    metadatas = extractMetadatas(args.path, exiftool_exe_path=args.exiftool_exe_path, verbose=args.verbose, max_workers=None)
     
     verbose = args.verbose and not args.dry_run
     for file_metadatas in tqdm(metadatas, disable=not verbose, unit=' file', mininterval=1):

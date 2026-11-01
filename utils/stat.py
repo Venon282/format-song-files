@@ -26,7 +26,7 @@ def countMetadatas(
     if max_files is not None:
         files = list(files)[:max_files]
         
-    files_metadatas = extractMetadatas(files, exiftool_exe_path, verbose=verbose)
+    files_metadatas = extractMetadatas(files, exiftool_exe_path, verbose=verbose, max_workers=None)
     for metadatas in tqdm(files_metadatas, desc='Count metadatas:', unit='file', mininterval=1, disable=not verbose):
         for key, values in metadatas.items():
             if keys is not None and key not in keys:
