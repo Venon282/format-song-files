@@ -1,1 +1,0 @@
-Will be deprecate in futur versions. Use utils module.
