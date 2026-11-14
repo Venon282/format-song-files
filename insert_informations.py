@@ -6,11 +6,12 @@ import pandas as pd
 from dataclasses import asdict
 
 import special_tag_reorganisation
-from format_song_files.utils import readConfig, convertToOpus, sanitizeFullPath, setTags, renameFile
+
 from utils.audio_quality import rankAudioQuality
-from utils.file import getDestination
-from utils.metadata import deleteTags
+from utils.file import getDestination, fileToOpus, renameFile
+from utils.metadata import deleteTags, setTags
 from utils.logging_utils import getLogger
+from utils.config import readConfig
 
 logger = getLogger(__name__)
     
@@ -35,7 +36,7 @@ def insertInformations(
     for entry in entries:
         source_file = entry['SourceFile']
         try:
-            source_file = convertToOpus(source_file)
+            source_file = fileToOpus(source_file)
             audio = mutagen.File(source_file, easy=True)
 
             deleteTags(audio, entry['TagsToDelete'] + list(entry['TagsToSet'].keys()))

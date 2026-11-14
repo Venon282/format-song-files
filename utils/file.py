@@ -11,6 +11,11 @@ from utils.string import generateKeyVariants
 
 logger = getLogger(__name__)
 
+def renameFile(new_name: str, file_path: str):
+    new_file_path = os.path.join(os.path.dirname(file_path), new_name)
+    os.rename(file_path, new_file_path)
+    return new_file_path
+
 def iterFiles(path:str) -> Generator[str]:
     for root, _, files in os.walk(path):
         for file in files:

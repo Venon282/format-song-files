@@ -13,6 +13,9 @@ import mutagen
 
 from utils.file import batchFiles, iterFiles
 from utils.string import generateKeyVariants
+from utils.logging_utils import getLogger
+
+logger = getLogger(__name__)
 
 
 _COPY_RE = re.compile(r"^Copy(\d+)$")
@@ -26,6 +29,21 @@ def deleteTags(audio:mutagen.File, tags_to_delete: list[str]):
     for tag in tags_to_delete:
         for tag_variant in generateKeyVariants(tag):
             audio.pop(tag_variant, None)
+            
+def setTags(audio:mutagen.File, tags_to_set: dict[str, list[str]]):
+    if not tags_to_set:
+        return
+
+    for tag, value in tags_to_set.items():
+        try:
+            if isinstance(value, list):
+                audio[tag] = list(set(value))
+            else:
+                audio[tag] = value
+        except Exception as e:
+            logger.error(tags_to_set)
+            logger.error(f'{tag}: {value}')
+            raise
 
 def _parseJsonEntry(raw: dict) -> dict:
     """{'Vorbis:Copy1:Genre': 'J-Pop', 'Vorbis:Genre': 'Pop'} -> {'Genre': ['J-Pop', 'Pop']}"""
