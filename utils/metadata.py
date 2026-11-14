@@ -1,18 +1,31 @@
 import os
 import re
+import atexit
 import exiftool
 import itertools
 from tqdm import tqdm
 from typing import Iterable
 from collections.abc import Iterable
 from contextlib import contextmanager
+from multiprocessing.util import Finalize
 from concurrent.futures import ProcessPoolExecutor, as_completed
+import mutagen
 
 from utils.file import batchFiles, iterFiles
+from utils.string import generateKeyVariants
 
 
 _COPY_RE = re.compile(r"^Copy(\d+)$")
+_worker_eh = None
+_worker_finalizer = None
 
+def deleteTags(audio:mutagen.File, tags_to_delete: list[str]):
+    if not tags_to_delete:
+        return
+    
+    for tag in tags_to_delete:
+        for tag_variant in generateKeyVariants(tag):
+            audio.pop(tag_variant, None)
 
 def _parseJsonEntry(raw: dict) -> dict:
     """{'Vorbis:Copy1:Genre': 'J-Pop', 'Vorbis:Genre': 'Pop'} -> {'Genre': ['J-Pop', 'Pop']}"""
@@ -44,19 +57,30 @@ def _parseJsonEntry(raw: dict) -> dict:
 
     return entry
 
+def _initExifToolWorker(exiftool_exe_path):
+    global _worker_eh, _worker_finalizer
+
+    _worker_eh = exiftool.ExifToolHelper(
+        executable=exiftool_exe_path,
+        encoding="utf-8",
+        common_args=[],
+    )
+
+    _worker_eh.run()
+    _worker_finalizer = Finalize(
+        None,
+        _worker_eh.terminate,
+        exitpriority=10,
+    )
+    
 def _extractMetadatas(batch, exiftool_exe_path):
-    with exiftool.ExifToolHelper(
-        executable=exiftool_exe_path, 
-        encoding="utf-8", 
-        common_args=[]
-    ) as eh:
-        raw = eh.execute_json(
-            "-a",
-            "-G1:4",
-            "-charset", "exiftool=utf8",
-            *batch,
-        )
-        return [_parseJsonEntry(r) for r in raw]
+    raw = _worker_eh.execute_json(
+        "-a",
+        "-G1:4",
+        "-charset", "exiftool=utf8",
+        *batch,
+    )
+    return [_parseJsonEntry(r) for r in raw]
 
 def extractMetadatas(
     files_paths: Iterable[str] | str,
@@ -101,7 +125,7 @@ def extractMetadatas(
 
                 results.extend(_parseJsonEntry(r) for r in raw)
     else:
-        with ProcessPoolExecutor(max_workers=max_workers) as executor: # can't pass it directly has previous version because need to be sure to overwrite common args
+        with ProcessPoolExecutor(max_workers=max_workers, initializer=_initExifToolWorker, initargs=(exiftool_exe_path,)) as executor: # can't pass it directly has previous version because need to be sure to overwrite common args
                     
             futures = {
                 executor.submit(_extractMetadatas, files_paths[start:start + batch_size], exiftool_exe_path): i

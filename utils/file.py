@@ -7,6 +7,7 @@ from collections.abc import Generator, Iterable
 
 # internal
 from utils.logging_utils import getLogger
+from utils.string import generateKeyVariants
 
 logger = getLogger(__name__)
 
@@ -156,8 +157,8 @@ def getDestination(music_root:str, file_path: str, file_metadatas: dict):
             
         return re.sub(r'[<>:"/\\|?*]', "", str(element)) 
             
-    artist = _helper(['album_artist', 'AlbumArtist', 'artist', 'Artist'])    
-    album = _helper(['album', 'Album'])
+    artist = _helper([*generateKeyVariants('AlbumArtist'), *generateKeyVariants('artist')])    
+    album = _helper(generateKeyVariants('album'))
     
     if ';' in artist or ';' in album:
         shutil.move(file_path, os.path.join(r'E:\music utils\todo\redo', os.path.basename(file_path)))

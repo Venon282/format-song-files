@@ -1,241 +1,183 @@
 [
   {
-    "SourceFile": "E:\\music utils\\processing 2\\Bohemian Rhapsody (Salsa & Reggaeton Version).mp3",
-    "NewFileName": "Bohemian Rhapsody (Salsa & Reggaeton Version).mp3",
-    "TagsToDelete": [],
+    "SourceFile": "E:\\music utils\\processing 3\\James Brown - Stone to the bone (1973).mp3",
+    "NewFileName": "Stoned to the Bone - James Brown (1973).mp3",
+    "TagsToDelete": ["comment", "date"],
     "TagsToSet": {
-      "title": ["Bohemian Rhapsody (Salsa & Reggaeton Version)"],
-      "genre": ["Latin", "Salsa", "Reggaeton"],
-      "style": ["Cover", "Reimagining"],
-      "mood": ["Energetic", "Upbeat", "Groovy", "Festive", "Tropical", "Playful"]
-    }
-  },
-  {
-    "SourceFile": "E:\\music utils\\processing 2\\Bohemian Rhapsody - Queen.mp3",
-    "NewFileName": "Bohemian Rhapsody - Queen (1975).mp3",
-    "TagsToDelete": [
-      "encodedby",
-      "wmmediaclassprimaryid",
-      "wmmediaclasssecondaryid",
-      "wmcontentid",
-      "wmuniquefileidentifier",
-      "wmcollectionid",
-      "wmcollectiongroupid",
-      "wmprovider"
-    ],
-    "TagsToSet": {
-      "title": ["Bohemian Rhapsody"],
-      "artist": ["Queen"],
-      "album": ["Wayne's World"],
-      "album_artist": ["Various Artists"],
-      "year": ["1975"],
-      "genre": ["Rock", "Hard Rock"],
-      "style": ["Male Voice", "OST", "Insert Song", "Narrative"],
-      "mood": ["Dramatic", "Epic", "Emotional", "Tragic", "Regretful", "Majestic", "Passionate", "Intense", "Anthemic", "Defiant"],
+      "title": ["Stoned to the Bone"],
+      "artist": ["James Brown"],
+      "album": ["The Payback"],
+      "album_artist": ["James Brown"],
+      "year": ["1973"],
+      "genre": ["Funk", "Soul", "R&B"],
+      "style": ["Original Song", "Male Voice"],
+      "mood": ["Groovy", "Energetic", "Confident", "Driving"],
       "language": ["English"],
-      "country": ["United Kingdom"],
-      "decade": ["1970s"],
-      "comment": ["Wayne's World", "Paramount Pictures"]
+      "country": ["United States"],
+      "decade": ["1970s"]
     }
   },
   {
-    "SourceFile": "E:\\music utils\\processing 2\\Bondax_-_All_I_See.mp3",
-    "NewFileName": "All I See - Bondax;Tanya Lacey (2014).mp3",
-    "TagsToDelete": [],
+    "SourceFile": "E:\\music utils\\processing 3\\James Brown-I feel good (I got you).mp3",
+    "NewFileName": "I Got You (I Feel Good) - James Brown (1965).mp3",
+    "TagsToDelete": ["comment", "userdefinedurl", "date"],
     "TagsToSet": {
-      "title": ["All I See"],
-      "artist": ["Bondax", "Tanya Lacey"],
-      "year": ["2014"],
-      "genre": ["House", "Dance", "Electronic", "Pop"],
-      "style": ["Female Voice"],
-      "mood": ["Summery", "Upbeat", "Happy", "Groovy", "Uplifting", "Bright", "Warm"],
+      "title": ["I Got You (I Feel Good)"],
+      "artist": ["James Brown"],
+      "year": ["1965"],
+      "genre": ["Soul", "Funk", "R&B"],
+      "style": ["Original Song", "Male Voice"],
+      "mood": ["Happy", "Upbeat", "Energetic", "Groovy", "Cheerful", "Confident"],
       "language": ["English"],
-      "country": ["United Kingdom"],
-      "decade": ["2010s"]
+      "country": ["United States"],
+      "decade": ["1960s"]
     }
   },
   {
-    "SourceFile": "E:\\music utils\\processing 2\\BONDI - Trippin (Gabe Remix).mp3",
-    "NewFileName": "Trippin (Gabe Remix) - Gabe (2016).mp3",
-    "TagsToDelete": [],
+    "SourceFile": "E:\\music utils\\processing 3\\James Vincent McMorrow-Higher Love (C-ro Edit).mp3",
+    "NewFileName": "Higher Love (C-ro Edit) - C-ro.mp3",
+    "TagsToDelete": ["comment", "date"],
     "TagsToSet": {
-      "title": ["Trippin (Gabe Remix)"],
-      "artist": ["Gabe"],
-      "album": ["Those Days"],
-      "album_artist": ["BONDI"],
-      "year": ["2016"],
-      "genre": ["Deep House", "House", "Electronic", "Dance"],
-      "style": ["Remix"],
-      "mood": ["Groovy", "Smooth", "Driving", "Atmospheric", "Dreamy"],
-      "country": ["Germany"],
-      "decade": ["2010s"]
+      "title": ["Higher Love (C-ro Edit)"],
+      "artist": ["C-ro"],
+      "genre": ["Electronic", "Indie Folk", "Alternative"],
+      "style": ["Remix", "Cover", "Male Voice"],
+      "mood": ["Yearning", "Emotional", "Heartfelt", "Hopeful", "Dreamy"],
+      "language": ["English"],
+      "country": ["Ireland"]
     }
   },
   {
-    "SourceFile": "E:\\music utils\\processing 2\\Boney M - Daddy Cool (Chris Moody & DJ Riz Remix).mp3",
-    "NewFileName": "Daddy Cool (Chris Moody & DJ Riz Remix) - Chris Moody;DJ Riz (2011).mp3",
-    "TagsToDelete": [
-      "comment"
-    ],
+    "SourceFile": "E:\\music utils\\processing 3\\James_Bay_-_Hold_Back_The_River_(FlyBoy_Boot.mp3",
+    "NewFileName": "Hold Back the River (FlyBoy Bootleg) - FlyBoy.mp3",
+    "TagsToDelete": ["majorbrand", "minorversion", "compatiblebrands", "encodersettings", "comment", "date"],
     "TagsToSet": {
-      "title": ["Daddy Cool (Chris Moody & DJ Riz Remix)"],
-      "artist": ["Chris Moody", "DJ Riz"],
-      "year": ["2011"],
-      "genre": ["Disco", "House", "Dance", "Electronic"],
+      "title": ["Hold Back the River (FlyBoy Bootleg)"],
+      "artist": ["FlyBoy"],
+      "genre": ["Electronic", "Dance", "Pop"],
+      "style": ["Remix", "Fan-Made", "Male Voice"],
+      "mood": ["Emotional", "Yearning", "Uplifting", "Hopeful"],
+      "language": ["English"],
+      "country": ["United Kingdom"]
+    }
+  },
+  {
+    "SourceFile": "E:\\music utils\\processing 3\\James_Bay_-_Hold_Back_The_River_(FlyBoy_Bootleg).mp3",
+    "NewFileName": "Hold Back the River (FlyBoy Bootleg) - FlyBoy.mp3",
+    "TagsToDelete": ["majorbrand", "minorversion", "compatiblebrands", "encodersettings", "comment", "date"],
+    "TagsToSet": {
+      "title": ["Hold Back the River (FlyBoy Bootleg)"],
+      "artist": ["FlyBoy"],
+      "genre": ["Electronic", "Dance", "Pop"],
+      "style": ["Remix", "Fan-Made", "Male Voice"],
+      "mood": ["Emotional", "Yearning", "Uplifting", "Hopeful"],
+      "language": ["English"],
+      "country": ["United Kingdom"]
+    }
+  },
+  {
+    "SourceFile": "E:\\music utils\\processing 3\\James_Blake_-_Limit_To_Your_Love_(Alex_Dimou.mp3",
+    "NewFileName": "Limit to Your Love (Alex Dimou Remix) - Alex Dimou.mp3",
+    "TagsToDelete": ["majorbrand", "minorversion", "compatiblebrands", "encodersettings", "comment", "date"],
+    "TagsToSet": {
+      "title": ["Limit to Your Love (Alex Dimou Remix)"],
+      "artist": ["Alex Dimou"],
+      "genre": ["Electronic", "House"],
       "style": ["Remix", "Male Voice"],
-      "mood": ["Groovy", "Upbeat", "Energetic", "Playful", "Nostalgic", "Cheerful"],
+      "mood": ["Moody", "Atmospheric", "Melancholic"],
       "language": ["English"],
-      "country": ["United States"],
+      "country": ["United Kingdom"]
+    }
+  },
+  {
+    "SourceFile": "E:\\music utils\\processing 3\\James_Blake_-_Limit_To_Your_Love_(Alex_Dimou_Remix).mp3",
+    "NewFileName": "Limit to Your Love (Alex Dimou Remix) - Alex Dimou.mp3",
+    "TagsToDelete": ["majorbrand", "minorversion", "compatiblebrands", "encodersettings", "comment", "date"],
+    "TagsToSet": {
+      "title": ["Limit to Your Love (Alex Dimou Remix)"],
+      "artist": ["Alex Dimou"],
+      "genre": ["Electronic", "House"],
+      "style": ["Remix", "Male Voice"],
+      "mood": ["Moody", "Atmospheric", "Melancholic"],
+      "language": ["English"],
+      "country": ["United Kingdom"]
+    }
+  },
+  {
+    "SourceFile": "E:\\music utils\\processing 3\\James_Hersey_-_What_Ive_Done_(Feast._Remix).mp3",
+    "NewFileName": "What I’ve Done (Feast. Remix) - Feast. (2015).mp3",
+    "TagsToDelete": ["majorbrand", "minorversion", "compatiblebrands", "encodersettings", "comment"],
+    "TagsToSet": {
+      "title": ["What I’ve Done (Feast. Remix)"],
+      "artist": ["Feast."],
+      "year": ["2015"],
+      "genre": ["Electronic", "House", "Deep House"],
+      "style": ["Remix", "Male Voice"],
+      "mood": ["Chill", "Smooth", "Upbeat", "Warm"],
+      "language": ["English"],
+      "country": ["Austria"],
       "decade": ["2010s"]
     }
   },
   {
-    "SourceFile": "E:\\music utils\\processing 2\\Boney M - Rivers Of Babylon.mp3",
-    "NewFileName": "Rivers of Babylon - Boney M. (1978).mp3",
-    "TagsToDelete": [
-      "comment",
-      "comment (fre)",
-      "wmmediaclassprimaryid",
-      "wmmediaclasssecondaryid",
-      "wmcontentid",
-      "wmuniquefileidentifier",
-      "wmcollectionid",
-      "wmcollectiongroupid",
-      "wmprovider"
-    ],
+    "SourceFile": "E:\\music utils\\processing 3\\James_Vincent_McMorrow_-_Wicked_Games_(Boehm.mp3",
+    "NewFileName": "Wicked Games (Boehm Remix) - Boehm.mp3",
+    "TagsToDelete": ["majorbrand", "minorversion", "compatiblebrands", "encodersettings", "comment", "date"],
     "TagsToSet": {
-      "title": ["Rivers of Babylon"],
-      "artist": ["Boney M."],
-      "album": ["Nightflight to Venus"],
-      "album_artist": ["Boney M."],
-      "year": ["1978"],
-      "genre": ["Disco", "Reggae", "Dance", "Pop"],
-      "style": ["Cover", "Religious", "Female Voice"],
-      "mood": ["Spiritual", "Mournful", "Yearning", "Hopeful", "Sincere", "Warm"],
+      "title": ["Wicked Games (Boehm Remix)"],
+      "artist": ["Boehm"],
+      "genre": ["Tropical House", "House", "Electronic", "Dance"],
+      "style": ["Remix", "Cover", "Male Voice"],
+      "mood": ["Chill", "Tropical", "Summery", "Smooth", "Romantic"],
       "language": ["English"],
-      "country": ["Germany"],
-      "decade": ["1970s"]
+      "country": ["Ireland"]
     }
   },
   {
-    "SourceFile": "E:\\music utils\\processing 2\\Boney_M._-_Sunny_(1976).mp3",
-    "NewFileName": "Sunny - Boney M. (1976).mp3",
-    "TagsToDelete": [],
+    "SourceFile": "E:\\music utils\\processing 3\\James_Vincent_McMorrow_-_Wicked_Games_(Boehm_Remix).mp3",
+    "NewFileName": "Wicked Games (Boehm Remix) - Boehm.mp3",
+    "TagsToDelete": ["majorbrand", "minorversion", "compatiblebrands", "encodersettings", "comment", "date"],
     "TagsToSet": {
-      "title": ["Sunny"],
-      "artist": ["Boney M."],
-      "year": ["1976"],
-      "genre": ["Disco", "Dance", "Pop"],
-      "style": ["Cover", "Female Voice", "Love Song"],
-      "mood": ["Happy", "Cheerful", "Bright", "Warm", "Upbeat", "Groovy", "Sweet"],
+      "title": ["Wicked Games (Boehm Remix)"],
+      "artist": ["Boehm"],
+      "genre": ["Tropical House", "House", "Electronic", "Dance"],
+      "style": ["Remix", "Cover", "Male Voice"],
+      "mood": ["Chill", "Tropical", "Summery", "Smooth", "Romantic"],
       "language": ["English"],
-      "country": ["Germany"],
-      "decade": ["1970s"]
+      "country": ["Ireland"]
     }
   },
   {
-    "SourceFile": "E:\\music utils\\processing 2\\Boney_M_-_Rivers_of_Babylon.mp3",
-    "NewFileName": "Rivers of Babylon - Boney M. (1978).mp3",
-    "TagsToDelete": [],
+    "SourceFile": "E:\\music utils\\processing 3\\Jamie Jones - Moan & Groan (Original Mix) (Promo).mp3",
+    "NewFileName": "Moan & Groan - Jamie Jones (2013).mp3",
+    "TagsToDelete": ["comment", "date"],
     "TagsToSet": {
-      "title": ["Rivers of Babylon"],
-      "artist": ["Boney M."],
-      "album": ["Nightflight to Venus"],
-      "album_artist": ["Boney M."],
-      "year": ["1978"],
-      "genre": ["Disco", "Reggae", "Dance", "Pop"],
-      "style": ["Cover", "Religious", "Female Voice"],
-      "mood": ["Spiritual", "Mournful", "Yearning", "Hopeful", "Sincere", "Warm"],
-      "language": ["English"],
-      "country": ["Germany"],
-      "decade": ["1970s"]
-    }
-  },
-  {
-    "SourceFile": "E:\\music utils\\processing 2\\Bonnie Pointer - Heaven must have sent you.mp3",
-    "NewFileName": "Heaven Must Have Sent You - Bonnie Pointer.mp3",
-    "TagsToDelete": [
-      "comment"
-    ],
-    "TagsToSet": {
-      "title": ["Heaven Must Have Sent You"],
-      "artist": ["Bonnie Pointer"],
-      "genre": ["Disco", "Dance", "Funk"],
-      "style": ["Cover", "Female Voice", "Love Song"],
-      "mood": ["Upbeat", "Groovy", "Energetic", "Romantic", "Cheerful", "Euphoric"],
-      "language": ["English"],
-      "country": ["United States"],
-      "decade": ["1970s"]
-    }
-  },
-  {
-    "SourceFile": "E:\\music utils\\processing 2\\Bonnie Tyler - Total Eclipse of the Heart.mp3",
-    "NewFileName": "Total Eclipse of the Heart - Bonnie Tyler (1983).mp3",
-    "TagsToDelete": [],
-    "TagsToSet": {
-      "title": ["Total Eclipse of the Heart"],
-      "artist": ["Bonnie Tyler"],
-      "album": ["Faster Than the Speed of Night"],
-      "album_artist": ["Bonnie Tyler"],
-      "year": ["1983"],
-      "genre": ["Pop Rock", "Rock", "Pop"],
-      "style": ["Ballad", "Love Song", "Female Voice"],
-      "mood": ["Dramatic", "Epic", "Emotional", "Passionate", "Yearning", "Heartfelt", "Intense", "Anthemic", "Soaring", "Romantic"],
-      "language": ["English"],
-      "country": ["United Kingdom"],
-      "decade": ["1980s"]
-    }
-  },
-  {
-    "SourceFile": "E:\\music utils\\processing 2\\Bontan - The Revolution (UMEK Remix) www.music-team.net.mp3",
-    "NewFileName": "The Revolution (UMEK Remix) - UMEK (2013).mp3",
-    "TagsToDelete": [
-      "comment"
-    ],
-    "TagsToSet": {
-      "title": ["The Revolution (UMEK Remix)"],
-      "artist": ["UMEK"],
-      "album": ["Hit It From The Back EP"],
-      "album_artist": ["Bontan"],
+      "title": ["Moan & Groan"],
+      "artist": ["Jamie Jones"],
+      "album": ["Moan & Groan"],
+      "album_artist": ["Jamie Jones"],
       "year": ["2013"],
-      "genre": ["House", "Techno", "Electronic", "Dance"],
-      "style": ["Remix"],
-      "mood": ["Driving", "Groovy", "Energetic"],
-      "country": ["Slovenia"],
+      "genre": ["House", "Deep House", "Electronic", "Dance"],
+      "style": ["Original Song"],
+      "mood": ["Groovy", "Playful", "Cheeky", "Sensual", "Quirky"],
+      "country": ["United Kingdom"],
       "decade": ["2010s"]
     }
   },
   {
-    "SourceFile": "E:\\music utils\\processing 2\\Bontan__Sonny_Fodera_-_Want_To_Know_(Origina.mp3",
-    "NewFileName": "Want To Know (Original Mix) - Bontan;Sonny Fodera (2015).mp3",
-    "TagsToDelete": [],
+    "SourceFile": "E:\\music utils\\processing 3\\Jamie Jones-Road to the Studio (Fly Mix).mp3",
+    "NewFileName": "Road to the Studio (Fly Mix) - Jamie Jones (2012).mp3",
+    "TagsToDelete": ["encodersettings", "comment", "date"],
     "TagsToSet": {
-      "title": ["Want To Know (Original Mix)"],
-      "artist": ["Bontan", "Sonny Fodera"],
-      "album": ["Always You EP"],
-      "album_artist": ["Bontan", "Sonny Fodera"],
-      "year": ["2015"],
+      "title": ["Road to the Studio (Fly Mix)"],
+      "artist": ["Jamie Jones"],
+      "album": ["Changes"],
+      "album_artist": ["Jamie Jones"],
+      "year": ["2012"],
       "genre": ["Deep House", "House", "Electronic", "Dance"],
       "style": ["Original Song"],
-      "mood": ["Groovy", "Smooth", "Driving", "Atmospheric"],
-      "country": ["United Kingdom", "Australia"],
-      "decade": ["2010s"]
-    }
-  },
-  {
-    "SourceFile": "E:\\music utils\\processing 2\\Bontan__Sonny_Fodera_-_Want_To_Know_(Original_Mix)_[Suara].mp3",
-    "NewFileName": "Want To Know (Original Mix) - Bontan;Sonny Fodera (2015).mp3",
-    "TagsToDelete": [],
-    "TagsToSet": {
-      "title": ["Want To Know (Original Mix)"],
-      "artist": ["Bontan", "Sonny Fodera"],
-      "album": ["Always You EP"],
-      "album_artist": ["Bontan", "Sonny Fodera"],
-      "year": ["2015"],
-      "genre": ["Deep House", "House", "Electronic", "Dance"],
-      "style": ["Original Song"],
-      "mood": ["Groovy", "Smooth", "Driving", "Atmospheric"],
-      "country": ["United Kingdom", "Australia"],
+      "mood": ["Groovy", "Smooth", "Driving"],
+      "country": ["United Kingdom"],
       "decade": ["2010s"]
     }
   }

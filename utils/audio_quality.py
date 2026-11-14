@@ -433,6 +433,25 @@ class AudioQuality:
     score: float = 0.0           # 0-100, indicative; only compare duplicates with each other
     notes: list[str] = field(default_factory=list)
 
+    def __eq__(self, other:AudioQuality):
+        if not isinstance(other, AudioQuality):
+            return NotImplemented
+
+        return (
+            self.codec == other.codec
+            and self.lossless == other.lossless
+            and self.sample_rate == other.sample_rate
+            and self.channels == other.channels
+            and self.duration == other.duration
+            and self.bitrate_kbps == other.bitrate_kbps
+            and self.cutoff_hz == other.cutoff_hz
+            and self.cliff_db == other.cliff_db
+            and self.transcode_suspected == other.transcode_suspected
+            and self.clipping_ratio == other.clipping_ratio
+            and self.overshoot_db == other.overshoot_db
+            and self.peak_dbfs == other.peak_dbfs
+            and self.rms_dbfs == other.rms_dbfs
+        )
 
 # ---------------------------------------------------------------------------
 # Reading the file

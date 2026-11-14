@@ -244,7 +244,7 @@ def barHoriChart(
         )
         
     ax.grid(
-        axis="x",
+        axis="y",
         linestyle="--",
         alpha=0.3,
     )

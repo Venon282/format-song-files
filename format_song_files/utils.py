@@ -74,8 +74,19 @@ def convertToOpus(file_path: str, bitrate: str = "160k") -> str:
         subprocess.run(cmd, check=True)
         
         # Remove the old file (e.g., .m4a or .mp3) after successful conversion
-        os.remove(path)
-        print(f"Converted: {path.name} -> {output_path.name}")
+        if not output_path.exists() or output_path.stat().st_size == 0:
+            raise RuntimeError(f"Conversion failed: {output_path}")
+
+        try:
+            path.unlink()
+            print(f"Converted: {path.name} -> {output_path.name}")
+
+        except PermissionError as e:
+            print(
+                f"Converted, but couldn't delete original: {path}\n"
+                f"Reason: {e}"
+            )
+
         return str(output_path)
         
     except subprocess.CalledProcessError as e:

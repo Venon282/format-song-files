@@ -6,9 +6,13 @@ import pandas as pd
 from dataclasses import asdict
 
 import special_tag_reorganisation
-from format_song_files.utils import readConfig, convertToOpus, sanitizeFullPath, setTags, deleteTags, renameFile
+from format_song_files.utils import readConfig, convertToOpus, sanitizeFullPath, setTags, renameFile
 from utils.audio_quality import rankAudioQuality
 from utils.file import getDestination
+from utils.metadata import deleteTags
+from utils.logging_utils import getLogger
+
+logger = getLogger(__name__)
     
 def insertInformations(
     music_path:str,
@@ -21,11 +25,8 @@ def insertInformations(
     # Load metadatas
     with open(load_path, 'r', encoding='utf-8') as f:
         entries = json.load(f)
-        
-    all_files = [entry.path for entry in os.scandir(music_path) if entry.is_file()]
-    #if len(all_files) != len(entries):
-    #    raise ValueError(f'Found {len(all_files)} files for {len(entries)} entries')
     
+    # reorganise tags depending of a defined method
     if tag_reorganisation is not None:
         getattr(special_tag_reorganisation, tag_reorganisation)(entries, exclude_tags = ('title', 'artist', 'album_artist', 'year', 'album')) # inplace
         
@@ -52,16 +53,16 @@ def insertInformations(
             source_file = renameFile(entry['NewFileName'], source_file)
             
             if deplace_to_path is not None:
-                # artist = entry['TagsToSet'].get('artist', ['Unknow'])
-                # artist = ', '.join(artist).replace('/', '-').replace('\\', '-').replace(':', '-')
-                    
-                # album = entry['TagsToSet'].get('album', ['Unknow'])
-                # album = ', '.join(album).replace('/', '-').replace('\\', '-').replace(':', '-')
-  
-                # dest_file = sanitizeFullPath(os.path.join(deplace_to_path, artist, album, os.path.basename(source_file)))
+                
                 dest_file = getDestination(music_root=deplace_to_path, file_path=source_file, file_metadatas=entry['TagsToSet'])
+                
                 if os.path.exists(dest_file):
                     ranking, decisive = rankAudioQuality([source_file, dest_file], keep_order=True)
+                    
+                    if ranking[0] == ranking[1]:
+                        os.remove(source_file)
+                        logger.warning(f'File removed as same than destination one: {source_file}')
+                        
                     ranking = [asdict(x) for x in ranking]
                     for rank in ranking:
                         rank['notes'] = '' #'\n'.join(rank['notes'])

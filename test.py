@@ -145,8 +145,10 @@ if __name__ == '__main__':
     music_path = r'E:\music'
     todo_path = r'E:\music utils\todo'
     
-    timeTestExtractMetadatasWithWorkers(music_path, exiftool_exe_path)
+    # timeTestExtractMetadatasWithWorkers(music_path, exiftool_exe_path)
     
+    from utils.string import generateKeyVariants
+    print(generateKeyVariants('PictureMIMEType'))
     
     #fileWithNonLatinCharFromServerToTodo(music_path, todo_path, exiftool_exe_path)
 
