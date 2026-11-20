@@ -63,6 +63,7 @@ def insertInformations(
                     if ranking[0] == ranking[1]:
                         os.remove(source_file)
                         logger.warning(f'File removed as same than destination one: {source_file}')
+                        continue
                         
                     ranking = [asdict(x) for x in ranking]
                     for rank in ranking:
