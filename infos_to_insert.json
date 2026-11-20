@@ -1,183 +1,254 @@
 [
   {
-    "SourceFile": "E:\\music utils\\processing 3\\James Brown - Stone to the bone (1973).mp3",
-    "NewFileName": "Stoned to the Bone - James Brown (1973).mp3",
-    "TagsToDelete": ["comment", "date"],
+    "SourceFile": "E:/music utils/processing 3/Mambo Italiano-Massimo Scalici (Salsa Version).mp3",
+    "NewFileName": "Mambo Italiano (Salsa Version) - Massimo Scalici.mp3",
+    "TagsToDelete": [],
     "TagsToSet": {
-      "title": ["Stoned to the Bone"],
-      "artist": ["James Brown"],
-      "album": ["The Payback"],
-      "album_artist": ["James Brown"],
-      "year": ["1973"],
-      "genre": ["Funk", "Soul", "R&B"],
-      "style": ["Original Song", "Male Voice"],
-      "mood": ["Groovy", "Energetic", "Confident", "Driving"],
-      "language": ["English"],
-      "country": ["United States"],
-      "decade": ["1970s"]
+      "title": ["Mambo Italiano (Salsa Version)"],
+      "artist": ["Massimo Scalici"],
+      "genre": ["Salsa", "Latin"],
+      "style": ["Cover", "Reimagining"],
+      "mood": ["Playful", "Cheerful", "Upbeat", "Festive", "Energetic", "Cheeky"]
     }
   },
   {
-    "SourceFile": "E:\\music utils\\processing 3\\James Brown-I feel good (I got you).mp3",
-    "NewFileName": "I Got You (I Feel Good) - James Brown (1965).mp3",
-    "TagsToDelete": ["comment", "userdefinedurl", "date"],
+    "SourceFile": "E:/music utils/processing 3/Man in the Mirror.mp3",
+    "NewFileName": "Man in the Mirror - Michael Jackson (1987).mp3",
+    "TagsToDelete": [
+      "wm_mediaclassprimaryid",
+      "wm_mediaclasssecondaryid",
+      "wm_contentid",
+      "wm_uniquefileidentifier",
+      "wm_collectionid",
+      "wm_collectiongroupid",
+      "wm_provider",
+      "musiccdidentifier",
+      "datetimeoriginal",
+      "comment"
+    ],
     "TagsToSet": {
-      "title": ["I Got You (I Feel Good)"],
-      "artist": ["James Brown"],
-      "year": ["1965"],
-      "genre": ["Soul", "Funk", "R&B"],
-      "style": ["Original Song", "Male Voice"],
-      "mood": ["Happy", "Upbeat", "Energetic", "Groovy", "Cheerful", "Confident"],
+      "title": ["Man in the Mirror"],
+      "artist": ["Michael Jackson"],
+      "album": ["HIStory: Past, Present and Future, Book I"],
+      "album_artist": ["Michael Jackson"],
+      "year": ["1987"],
+      "genre": ["Pop", "R&B", "Soul", "Gospel"],
+      "style": ["Male Voice", "Choir", "Original Song"],
+      "mood": ["Inspiring", "Empowering", "Uplifting", "Hopeful", "Emotional", "Heartfelt", "Motivating", "Encouraging", "Sincere", "Soaring", "Anthemic", "Reflective", "Introspective", "Determined"],
       "language": ["English"],
       "country": ["United States"],
+      "decade": ["1980s"]
+    }
+  },
+  {
+    "SourceFile": "E:/music utils/processing 3/Manau - La tribu de Dana.mp3",
+    "NewFileName": "La Tribu de Dana - Manau (1998).mp3",
+    "TagsToDelete": [
+      "popularimeter",
+      "comment"
+    ],
+    "TagsToSet": {
+      "title": ["La Tribu de Dana"],
+      "artist": ["Manau"],
+      "year": ["1998"],
+      "genre": ["Hip Hop", "Rap", "Celtic", "Pop"],
+      "style": ["Male Voice", "Original Song"],
+      "mood": ["Energetic", "Upbeat", "Anthemic", "Rousing", "Spirited", "Fantasy", "Mystical"],
+      "language": ["French"],
+      "country": ["France"],
+      "decade": ["1990s"]
+    }
+  },
+  {
+    "SourceFile": "E:/music utils/processing 3/Manchildblack___Amazing__Libation_Vocal.mp3",
+    "NewFileName": "Amazing (Libation Vocal) - Manchildblack.mp3",
+    "TagsToDelete": [
+      "comment"
+    ],
+    "TagsToSet": {
+      "title": ["Amazing (Libation Vocal)"],
+      "artist": ["Manchildblack"],
+      "genre": ["House", "Dance", "Electronic"],
+      "style": ["Male Voice", "Original Song"],
+      "mood": ["Uplifting", "Euphoric", "Groovy", "Warm", "Energetic", "Happy"],
+      "country": ["United States"]
+    }
+  },
+  {
+    "SourceFile": "E:/music utils/processing 3/Manhattan Bound - Sebastian Manuel.mp3",
+    "NewFileName": "Manhattan Bound - Sebastian Manuel.mp3",
+    "TagsToDelete": [],
+    "TagsToSet": {
+      "title": ["Manhattan Bound"],
+      "artist": ["Sebastian Manuel"],
+      "genre": ["House", "Electronic", "Dance"],
+      "style": ["Original Song"],
+      "mood": ["Driving", "Groovy", "Energetic"],
+      "country": ["United States"]
+    }
+  },
+  {
+    "SourceFile": "E:/music utils/processing 3/MANIK (NYC) - Body High (Original Mix).mp3",
+    "NewFileName": "Body High - MANIK.mp3",
+    "TagsToDelete": [
+      "comment"
+    ],
+    "TagsToSet": {
+      "title": ["Body High"],
+      "artist": ["MANIK"],
+      "genre": ["House", "Electronic", "Dance"],
+      "style": ["Original Song"],
+      "mood": ["Groovy", "Driving", "Energetic", "Upbeat"],
+      "country": ["United States"]
+    }
+  },
+  {
+    "SourceFile": "E:/music utils/processing 3/Manu Chao - Mano Negra - Mala Vida.mp3",
+    "NewFileName": "Mala Vida - Mano Negra (1988).mp3",
+    "TagsToDelete": [
+      "comment"
+    ],
+    "TagsToSet": {
+      "title": ["Mala Vida"],
+      "artist": ["Mano Negra"],
+      "album": ["Patchanka"],
+      "album_artist": ["Mano Negra"],
+      "year": ["1988"],
+      "genre": ["Rock", "Alternative Rock", "Punk Rock", "Latin", "World"],
+      "style": ["Male Voice", "Original Song"],
+      "mood": ["Energetic", "Rebellious", "Defiant", "Rowdy", "Spirited", "Upbeat", "Gritty"],
+      "language": ["Spanish"],
+      "country": ["France"],
+      "decade": ["1980s"]
+    }
+  },
+  {
+    "SourceFile": "E:/music utils/processing 3/manu chao mala vida.mp3",
+    "NewFileName": "Mala Vida.mp3",
+    "TagsToDelete": [],
+    "TagsToSet": {
+      "title": ["Mala Vida"],
+      "genre": ["Rock", "Alternative Rock", "Punk Rock", "Latin", "World"],
+      "style": ["Male Voice"],
+      "mood": ["Energetic", "Rebellious", "Defiant", "Rowdy", "Spirited", "Upbeat", "Gritty"],
+      "language": ["Spanish"]
+    }
+  },
+  {
+    "SourceFile": "E:/music utils/processing 3/Manu Dibango & Angelique Kidjo & Papa Wemba - Son De La Loma.mp3",
+    "NewFileName": "Son de la Loma - Manu Dibango;Cuarteto Patria (1998).mp3",
+    "TagsToDelete": [
+      "wm_mediaclassprimaryid",
+      "wm_mediaclasssecondaryid",
+      "wm_contentid",
+      "wm_uniquefileidentifier",
+      "wm_collectionid",
+      "wm_collectiongroupid",
+      "wm_provider",
+      "datetimeoriginal",
+      "comment"
+    ],
+    "TagsToSet": {
+      "title": ["Son de la Loma"],
+      "artist": ["Manu Dibango", "Cuarteto Patria"],
+      "album": ["CubAfrica"],
+      "album_artist": ["Manu Dibango", "Cuarteto Patria"],
+      "year": ["1998"],
+      "genre": ["Latin", "World"],
+      "style": ["Cover", "Male Voice"],
+      "mood": ["Festive", "Upbeat", "Cheerful", "Groovy", "Warm", "Tropical", "Exotic", "Spirited", "Energetic", "Playful"],
+      "language": ["Spanish"],
+      "country": ["Cameroon", "Cuba"],
+      "decade": ["1990s"]
+    }
+  },
+  {
+    "SourceFile": "E:/music utils/processing 3/Marcapasos_-_Movement_sound.mp3",
+    "NewFileName": "Movement Sound - Marcapasos.mp3",
+    "TagsToDelete": [],
+    "TagsToSet": {
+      "title": ["Movement Sound"],
+      "artist": ["Marcapasos"],
+      "genre": ["House", "Electronic", "Dance"],
+      "style": ["Original Song"],
+      "mood": ["Groovy", "Driving", "Energetic"]
+    }
+  },
+  {
+    "SourceFile": "E:/music utils/processing 3/MARCHE TOUT DROIT.mp3",
+    "NewFileName": "Marche tout droit - Claude François (1963).mp3",
+    "TagsToDelete": [
+      "wm_mediaclassprimaryid",
+      "wm_mediaclasssecondaryid",
+      "wm_contentid",
+      "wm_uniquefileidentifier",
+      "wm_collectionid",
+      "wm_collectiongroupid",
+      "wm_provider",
+      "datetimeoriginal",
+      "comment"
+    ],
+    "TagsToSet": {
+      "title": ["Marche tout droit"],
+      "artist": ["Claude François"],
+      "year": ["1963"],
+      "genre": ["Pop", "Chanson Française"],
+      "style": ["Cover", "Male Voice"],
+      "mood": ["Cheerful", "Playful", "Lighthearted", "Upbeat", "Youthful", "Cheeky", "Happy", "Charming"],
+      "language": ["French"],
+      "country": ["France"],
       "decade": ["1960s"]
     }
   },
   {
-    "SourceFile": "E:\\music utils\\processing 3\\James Vincent McMorrow-Higher Love (C-ro Edit).mp3",
-    "NewFileName": "Higher Love (C-ro Edit) - C-ro.mp3",
-    "TagsToDelete": ["comment", "date"],
+    "SourceFile": "E:/music utils/processing 3/marc_anthony-dimelo.mp3",
+    "NewFileName": "Dímelo - Marc Anthony (1999).mp3",
+    "TagsToDelete": [
+      "wm_mediaclassprimaryid",
+      "wm_mediaclasssecondaryid",
+      "wm_contentid",
+      "wm_uniquefileidentifier",
+      "wm_collectionid",
+      "wm_collectiongroupid",
+      "wm_provider",
+      "datetimeoriginal",
+      "date",
+      "ripdate",
+      "rippingtool",
+      "source",
+      "releasetype",
+      "private",
+      "comment"
+    ],
     "TagsToSet": {
-      "title": ["Higher Love (C-ro Edit)"],
-      "artist": ["C-ro"],
-      "genre": ["Electronic", "Indie Folk", "Alternative"],
-      "style": ["Remix", "Cover", "Male Voice"],
-      "mood": ["Yearning", "Emotional", "Heartfelt", "Hopeful", "Dreamy"],
-      "language": ["English"],
-      "country": ["Ireland"]
+      "title": ["Dímelo"],
+      "artist": ["Marc Anthony"],
+      "album": ["Sigo Siendo Yo: Grandes Éxitos"],
+      "album_artist": ["Marc Anthony"],
+      "year": ["1999"],
+      "genre": ["Salsa", "Latin"],
+      "style": ["Male Voice", "Original Song"],
+      "mood": ["Passionate", "Energetic", "Upbeat", "Yearning", "Romantic", "Spirited", "Groovy"],
+      "language": ["Spanish"],
+      "country": ["United States"],
+      "decade": ["1990s"]
     }
   },
   {
-    "SourceFile": "E:\\music utils\\processing 3\\James_Bay_-_Hold_Back_The_River_(FlyBoy_Boot.mp3",
-    "NewFileName": "Hold Back the River (FlyBoy Bootleg) - FlyBoy.mp3",
-    "TagsToDelete": ["majorbrand", "minorversion", "compatiblebrands", "encodersettings", "comment", "date"],
+    "SourceFile": "E:/music utils/processing 3/MARC_ANTHONY_-_VIVIR_MI_VIDA.mp3",
+    "NewFileName": "Vivir Mi Vida - Marc Anthony (2013).mp3",
+    "TagsToDelete": [],
     "TagsToSet": {
-      "title": ["Hold Back the River (FlyBoy Bootleg)"],
-      "artist": ["FlyBoy"],
-      "genre": ["Electronic", "Dance", "Pop"],
-      "style": ["Remix", "Fan-Made", "Male Voice"],
-      "mood": ["Emotional", "Yearning", "Uplifting", "Hopeful"],
-      "language": ["English"],
-      "country": ["United Kingdom"]
-    }
-  },
-  {
-    "SourceFile": "E:\\music utils\\processing 3\\James_Bay_-_Hold_Back_The_River_(FlyBoy_Bootleg).mp3",
-    "NewFileName": "Hold Back the River (FlyBoy Bootleg) - FlyBoy.mp3",
-    "TagsToDelete": ["majorbrand", "minorversion", "compatiblebrands", "encodersettings", "comment", "date"],
-    "TagsToSet": {
-      "title": ["Hold Back the River (FlyBoy Bootleg)"],
-      "artist": ["FlyBoy"],
-      "genre": ["Electronic", "Dance", "Pop"],
-      "style": ["Remix", "Fan-Made", "Male Voice"],
-      "mood": ["Emotional", "Yearning", "Uplifting", "Hopeful"],
-      "language": ["English"],
-      "country": ["United Kingdom"]
-    }
-  },
-  {
-    "SourceFile": "E:\\music utils\\processing 3\\James_Blake_-_Limit_To_Your_Love_(Alex_Dimou.mp3",
-    "NewFileName": "Limit to Your Love (Alex Dimou Remix) - Alex Dimou.mp3",
-    "TagsToDelete": ["majorbrand", "minorversion", "compatiblebrands", "encodersettings", "comment", "date"],
-    "TagsToSet": {
-      "title": ["Limit to Your Love (Alex Dimou Remix)"],
-      "artist": ["Alex Dimou"],
-      "genre": ["Electronic", "House"],
-      "style": ["Remix", "Male Voice"],
-      "mood": ["Moody", "Atmospheric", "Melancholic"],
-      "language": ["English"],
-      "country": ["United Kingdom"]
-    }
-  },
-  {
-    "SourceFile": "E:\\music utils\\processing 3\\James_Blake_-_Limit_To_Your_Love_(Alex_Dimou_Remix).mp3",
-    "NewFileName": "Limit to Your Love (Alex Dimou Remix) - Alex Dimou.mp3",
-    "TagsToDelete": ["majorbrand", "minorversion", "compatiblebrands", "encodersettings", "comment", "date"],
-    "TagsToSet": {
-      "title": ["Limit to Your Love (Alex Dimou Remix)"],
-      "artist": ["Alex Dimou"],
-      "genre": ["Electronic", "House"],
-      "style": ["Remix", "Male Voice"],
-      "mood": ["Moody", "Atmospheric", "Melancholic"],
-      "language": ["English"],
-      "country": ["United Kingdom"]
-    }
-  },
-  {
-    "SourceFile": "E:\\music utils\\processing 3\\James_Hersey_-_What_Ive_Done_(Feast._Remix).mp3",
-    "NewFileName": "What I’ve Done (Feast. Remix) - Feast. (2015).mp3",
-    "TagsToDelete": ["majorbrand", "minorversion", "compatiblebrands", "encodersettings", "comment"],
-    "TagsToSet": {
-      "title": ["What I’ve Done (Feast. Remix)"],
-      "artist": ["Feast."],
-      "year": ["2015"],
-      "genre": ["Electronic", "House", "Deep House"],
-      "style": ["Remix", "Male Voice"],
-      "mood": ["Chill", "Smooth", "Upbeat", "Warm"],
-      "language": ["English"],
-      "country": ["Austria"],
-      "decade": ["2010s"]
-    }
-  },
-  {
-    "SourceFile": "E:\\music utils\\processing 3\\James_Vincent_McMorrow_-_Wicked_Games_(Boehm.mp3",
-    "NewFileName": "Wicked Games (Boehm Remix) - Boehm.mp3",
-    "TagsToDelete": ["majorbrand", "minorversion", "compatiblebrands", "encodersettings", "comment", "date"],
-    "TagsToSet": {
-      "title": ["Wicked Games (Boehm Remix)"],
-      "artist": ["Boehm"],
-      "genre": ["Tropical House", "House", "Electronic", "Dance"],
-      "style": ["Remix", "Cover", "Male Voice"],
-      "mood": ["Chill", "Tropical", "Summery", "Smooth", "Romantic"],
-      "language": ["English"],
-      "country": ["Ireland"]
-    }
-  },
-  {
-    "SourceFile": "E:\\music utils\\processing 3\\James_Vincent_McMorrow_-_Wicked_Games_(Boehm_Remix).mp3",
-    "NewFileName": "Wicked Games (Boehm Remix) - Boehm.mp3",
-    "TagsToDelete": ["majorbrand", "minorversion", "compatiblebrands", "encodersettings", "comment", "date"],
-    "TagsToSet": {
-      "title": ["Wicked Games (Boehm Remix)"],
-      "artist": ["Boehm"],
-      "genre": ["Tropical House", "House", "Electronic", "Dance"],
-      "style": ["Remix", "Cover", "Male Voice"],
-      "mood": ["Chill", "Tropical", "Summery", "Smooth", "Romantic"],
-      "language": ["English"],
-      "country": ["Ireland"]
-    }
-  },
-  {
-    "SourceFile": "E:\\music utils\\processing 3\\Jamie Jones - Moan & Groan (Original Mix) (Promo).mp3",
-    "NewFileName": "Moan & Groan - Jamie Jones (2013).mp3",
-    "TagsToDelete": ["comment", "date"],
-    "TagsToSet": {
-      "title": ["Moan & Groan"],
-      "artist": ["Jamie Jones"],
-      "album": ["Moan & Groan"],
-      "album_artist": ["Jamie Jones"],
+      "title": ["Vivir Mi Vida"],
+      "artist": ["Marc Anthony"],
+      "album": ["3.0"],
+      "album_artist": ["Marc Anthony"],
       "year": ["2013"],
-      "genre": ["House", "Deep House", "Electronic", "Dance"],
-      "style": ["Original Song"],
-      "mood": ["Groovy", "Playful", "Cheeky", "Sensual", "Quirky"],
-      "country": ["United Kingdom"],
-      "decade": ["2010s"]
-    }
-  },
-  {
-    "SourceFile": "E:\\music utils\\processing 3\\Jamie Jones-Road to the Studio (Fly Mix).mp3",
-    "NewFileName": "Road to the Studio (Fly Mix) - Jamie Jones (2012).mp3",
-    "TagsToDelete": ["encodersettings", "comment", "date"],
-    "TagsToSet": {
-      "title": ["Road to the Studio (Fly Mix)"],
-      "artist": ["Jamie Jones"],
-      "album": ["Changes"],
-      "album_artist": ["Jamie Jones"],
-      "year": ["2012"],
-      "genre": ["Deep House", "House", "Electronic", "Dance"],
-      "style": ["Original Song"],
-      "mood": ["Groovy", "Smooth", "Driving"],
-      "country": ["United Kingdom"],
+      "genre": ["Salsa", "Latin"],
+      "style": ["Cover", "Male Voice"],
+      "mood": ["Uplifting", "Happy", "Energetic", "Festive", "Empowering", "Upbeat", "Cheerful", "Motivating", "Inspiring", "Euphoric", "Rousing", "Encouraging", "Hopeful", "Anthemic"],
+      "language": ["Spanish"],
+      "country": ["United States"],
       "decade": ["2010s"]
     }
   }
