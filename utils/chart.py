@@ -39,7 +39,6 @@ def barVertChart(
         name:str,
         datas:dict, 
         top_n:int=None,
-        x_log:bool=True, 
         show:bool=False,
         save:str|None=None,
         close:bool=True,
@@ -52,6 +51,8 @@ def barVertChart(
             
     if top_n is not None:
         keys, values = keys[:top_n], values[:top_n]
+        
+    value_min, value_max = min(values), max(values)
 
     # Hight adapt depending of the number of categories
     fig_height = max(5, len(keys) * 0.4)
@@ -83,7 +84,7 @@ def barVertChart(
         fontsize=LABEL_SIZE,
     )
 
-    if x_log:
+    if len(str(value_min)) != len(str(value_max)) and value_max >= 100:
         ax.set_xscale('log')
         
     ax.spines["top"].set_visible(False)
