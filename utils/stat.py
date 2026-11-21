@@ -33,8 +33,9 @@ def countMetadatas(
                 continue
             if not isinstance(values, list):
                 values = [values]
-                
-            for value in values:
+            
+            seen = {str(v).strip() for v in values}
+            for value in seen:
                 counter[key][value] +=1
         
     
