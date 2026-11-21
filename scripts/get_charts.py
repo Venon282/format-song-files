@@ -26,9 +26,7 @@ def getbarCharts(args):
         barVertChart(f'{key} (top {args.top_n})', counter[key], top_n=args.top_n, save=os.path.join(args.output, key + f'_bar_vert_top_{args.top_n}.png'))
     
     years = {int(k): v for k, v in counter['Year'].items()}
-    years = dict(sorted(years.items(), key=lambda item: int(item[0])))
-    import json
-    print(json.dumps(years, indent=2))
+    years = dict(sorted(years.items()))
     barHoriChart(f'Years', years, categorical=True, save=os.path.join(args.output, key + f'_bar_hori.png'))  
     
         
