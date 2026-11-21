@@ -170,6 +170,7 @@ Examples:
 - `synopsis`
 - `description`
 - `purl`
+- `Date`
 - URLs
 - YouTube IDs
 - tracking identifiers

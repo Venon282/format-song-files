@@ -12,7 +12,7 @@ from concurrent.futures import ProcessPoolExecutor, as_completed
 import mutagen
 
 from utils.file import batchFiles, iterFiles
-from utils.string import generateKeyVariants
+from utils.string import generateKeyVariants, stringWithSpaceAroundsCase
 from utils.logging_utils import getLogger
 
 logger = getLogger(__name__)
@@ -22,13 +22,19 @@ _COPY_RE = re.compile(r"^Copy(\d+)$")
 _worker_eh = None
 _worker_finalizer = None
 
-def deleteTags(audio:mutagen.File, tags_to_delete: list[str]):
+def deleteTags(audio:mutagen.File, tags_to_delete: list[str], variants:bool = False):
     if not tags_to_delete:
         return
     
     for tag in tags_to_delete:
+        if variants is False:
+            audio.pop(tag, None)
+            continue
+        
         for tag_variant in generateKeyVariants(tag):
             audio.pop(tag_variant, None)
+            for sub_tag_variant in stringWithSpaceAroundsCase(tag_variant):
+                audio.pop(sub_tag_variant, None)
             
 def setTags(audio:mutagen.File, tags_to_set: dict[str, list[str]]):
     if not tags_to_set:
@@ -37,9 +43,9 @@ def setTags(audio:mutagen.File, tags_to_set: dict[str, list[str]]):
     for tag, value in tags_to_set.items():
         try:
             if isinstance(value, list):
-                audio[tag] = list(set(value))
+                audio[tag] = list({v.strip() for v in value})
             else:
-                audio[tag] = value
+                audio[tag] = value.strip()
         except Exception as e:
             logger.error(tags_to_set)
             logger.error(f'{tag}: {value}')

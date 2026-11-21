@@ -1,5 +1,12 @@
 import re
 
+def stringWithSpaceAroundsCase(string: str) -> list[str]:
+    return [
+        ' ' + string,
+        string + ' ',
+        ' ' + string + ' '
+    ]
+
 def generateKeyVariants(value: str) -> list[str]:
     words = re.sub(r"(?<=[a-z0-9])(?=[A-Z])|(?<=[A-Z])(?=[A-Z][a-z])", " ", value).split()
     

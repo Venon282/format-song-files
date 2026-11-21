@@ -27,6 +27,8 @@ def getbarCharts(args):
     
     years = {int(k): v for k, v in counter['Year'].items()}
     years = dict(sorted(years.items(), key=lambda item: int(item[0])))
+    import json
+    print(json.dumps(years, indent=2))
     barHoriChart(f'Years', years, categorical=True, save=os.path.join(args.output, key + f'_bar_hori.png'))  
     
         
@@ -42,7 +44,7 @@ if __name__ == "__main__":
     parser.add_argument("-mf", "--max_files", type=int, default=None, help="Max file quantity to process. Usefull for debug.")
     parser.add_argument("-eep", "--exiftool_exe_path", default=None, help="Exiftool executable path.")
     parser.add_argument("-v", "--verbose", action='store_true', help="Verbose come back.")
-    parser.add_argument('-tn', '--top_n', default=10, help='For list without quantity or too long display the top n only')
+    parser.add_argument('-tn', '--top_n', type=int, default=10, help='For list without quantity or too long display the top n only')
     
     args = parser.parse_args()
     
